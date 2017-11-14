@@ -2,36 +2,25 @@ body{
 
 
 }
-
-header{
-   position: relative;
-   color: #fff;
-}  
-header .top_bg{
- 
-   
+.fl{
+    float: left;
 }
-.headline .left {
-   position: absolute;
-   top: 1.428571rem;
-   left: 26.428571rem;
-}
-
-
-
-.headline .left .home{
-   
-    width: 2.285714rem;
-    height: 2.142857rem;
-
-}
-
-.headline span:nth-child(2){
-    vertical-align: middle
-}
-
-.headline .right {
+.fr{
     float: right;
 }
+
+header{
+   color: #fff;
+   height: auto;
+   width: 100%;
+
+}  
+.top_bg{
+    background: url('../img/top_bg.jpg') no-repeat center;
+    max-width: 100%;
+    height: auto;
+    background-size:cover;
+}
+
 
 
