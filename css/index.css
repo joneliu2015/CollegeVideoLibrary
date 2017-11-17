@@ -1,6 +1,9 @@
 body{
 
-
+}
+header{
+    padding-left: 0px !important; 
+    padding-right: 0px !important;
 }
 .fl{
     float: left;
@@ -8,19 +11,107 @@ body{
 .fr{
     float: right;
 }
+.row{
+    margin: 0;
+}
+.navbar{
+    margin-top: auto;
+}
+ul{
+    margin: 0;
+    padding:1rem 0 1rem 0;
+}
+li{
+    list-style: none;
+    float: left;
+    text-align: center;
+    font:bold 1.428571rem "MicrosoftYahei";
+    line-height: 2rem;
+    color: #4A74E2;
+    transition: 1s;
+    cursor: pointer;
+    -moz-user-select: none; 
+    -o-user-select:none; 
+    -khtml-user-select:none; 
+    -webkit-user-select:none; 
+    -ms-user-select:none; 
+    user-select:none;
+    
+}
+@media screen and (min-width:767px) {
+    li{
+      
+        font:bold 1.714286rem "MicrosoftYahei";
+        line-height: 3rem;
+        margin: 1rem 0 1rem 0;
+    }
+}
+@media screen and (max-width:766px) {
+    li{
+        font:bold 1.428571rem "MicrosoftYahei";
+        line-height: 2rem;
+        margin:0.5rem 0 1rem 0;
+    }
+}
 
-header{
-   color: #fff;
-   height: auto;
-   width: 100%;
+.country li  {
+    display: block;
+    border-radius: 20px;
+    
+}
+li:hover{
+    color: #fff;
+    background-color: rgb(180, 199, 241)
+}
 
-}  
-.top_bg{
-    background: url('../img/top_bg.jpg') no-repeat center;
-    max-width: 100%;
-    height: auto;
-    background-size:cover;
+.active{
+    background-color:#4A74E2;
+    color: #fff;
+    }
+.selected{
+    display: block;
+}
+.line{
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.content{
+    background-color: #F9F9F9;
+}
+@media screen and (max-width:767px){
+    .neirong>.left>.title,
+    .advert{
+        display: none;
+    };
+}
+.advert{
+    width: 260px;
+    float: right;
+}
+span {
+    display: inline-block
 }
 
 
+
+@media screen and (min-width:767px) {
+    .neirong{
+        padding-top: 3.142857rem;
+        }
+}
+@media screen {
+    .neirong{
+        padding-top: 2.142857rem;
+        }
+}
+.advert>.zixun>.title,
+.neirong>.left>.title{
+margin-bottom: 2.142857rem;
+}
+
+.list-group{
+    width: 14.285714rem;
+    height: 10.714286rem;
+
+}
 

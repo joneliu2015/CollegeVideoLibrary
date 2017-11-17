@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' href='http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css'>
+  <style>
+    .tNav{
+      margin-top: 10px;
+      border-bottom-style: none;
+    }
+    .bNav{
+      text-align: center;
+      height: 50px;
+      line-height: 50px;
+      font-size: 20px;
+    }
+    #btnNavList{
+      font-size: 20px;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+    #btnNavList:hover{
+      cursor: pointer;
+    }
+    .bNav:hover{
+      background: #EED2EE;
+      cursor: pointer;
+    }
+    #btnNavList,
+    #normalTNav,
+    #btnNavList-nav,
+    #btnMess-nav,
+    #btnMore-nav{
+      display: none;
+    }
+    #btnNavList-nav,
+    #btnMess-nav,
+    #btnMore-nav{
+      text-align: center;
+      background: #FFF0F5;
+      position: fixed;
+      right: 0;
+      width: 100%;
+      filter:alpha(opacity=80);
+      -moz-opacity: 0.8;
+      -khtml-opacity: 0.8;
+      opacity: 0.8;
+    }
+    #btnNavList-nav{
+      top: 50px;
+    }
+    #btnMess-nav,
+    #btnMore-nav{
+      bottom: 50px;
+    }
+    #btnNavList-nav a,
+    #btnMess-nav a,
+    #btnMore-nav a{
+      display: block;
+      text-decoration: none;
+      height: 50px;
+      line-height: 50px;
+    }
+    #btnNavList-nav a{
+      border-bottom: 1px solid #EED2EE;
+    }
+    #btnMess-nav a,
+    #btnMore-nav a{
+      border-top: 1px solid #EED2EE;
+    }
+    #btnNavList-nav a:hover,
+    #btnMess-nav a:hover,
+    #btnMore-nav a:hover{
+      background: #EED2EE;
+      cursor: pointer;
+    }
+    .content{
+      margin: 70px 0;
+    }
+  </style>
+</head>
+<body>
+  <nav class='navbar navbar-default navbar-fixed-top'>
+    <div class='container-fluid'>
+      <div class='navbar-header tNavLogo'>
+        <span class='glyphicon glyphicon-th-list' aria-hidden='true' id='btnNavList'></span>
+        <a class='navbar-brand' href='#'>Logo</a>
+      </div>
+      <ul class='nav nav-tabs tNav' id='normalTNav'>
+        <li role='presentation'><a href='#'>基础信息</a></li>
+        <li role='presentation'><a href='#'>基地订单</a></li>
+        <li role='presentation'><a href='#'>总部订单</a></li>
+        <li role='presentation'><a href='#'>发货结算</a></li>
+        <li role='presentation'><a href='#'>生产物流</a></li>
+        <li role='presentation'><a href='#'>库存查询</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class='content'></div>
+  <nav class='navbar navbar-default navbar-fixed-bottom'>
+    <div class='container-fluid'>
+      <div class='row'>
+        <div class='col-xs-3 bNav' id='btnHome'>
+          <span class='glyphicon glyphicon-home' aria-hidden='true'></span>
+        </div>
+        <div class='col-xs-3 bNav' id='btnUser'>
+          <span class='glyphicon glyphicon-user' aria-hidden='true'></span>
+        </div>
+        <div class='col-xs-3 bNav' id='btnMess'>
+          <span class='glyphicon glyphicon-comment' aria-hidden='true'></span>
+        </div>
+        <div class='col-xs-3 bNav' id='btnMore'>
+          <span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div id='btnNavList-nav'>
+    <div><a href='#'>基础信息</a></div>
+    <div><a href='#'>基地订单</a></div>
+    <div><a href='#'>总部订单</a></div>
+    <div><a href='#'>发货结算</a></div>
+    <div><a href='#'>生产物流</a></div>
+    <div><a href='#'>库存查询</a></div>
+  </div>
+  <div id='btnMess-nav'>
+    <div><a href='#'>我的消息1</a></div>
+    <div><a href='#'>我的消息2</a></div>
+    <div><a href='#'>我的消息3</a></div>
+  </div>
+  <div id='btnMore-nav'>
+    <div><a href='#'>当前版本</a></div>
+    <div><a href='#'>意见反馈</a></div>
+    <div><a href='#'>联系方式</a></div>
+    <div><a href='#'>关于</a></div>
+  </div>
+  <script src='http://cdn.bootcss.com/zepto/1.1.4/zepto.min.js'></script>
+  <script>
+    (function(){
+      function SHOW(obj){
+        obj.css('display','block');
+      }
+      function HIDE(obj){
+        obj.css('display','none');
+      }
+      function TOGGLE(e){
+        var obj = $(e);
+        if(obj.css('display') === 'none'){
+          obj.css('display', 'block');
+        }
+        else if(obj.css('display') === 'block'){
+          obj.css('display', 'none');
+        }
+      }
+      function tNavControl(){
+        var w = window.document.body.offsetWidth;
+        var objBtn = $('#btnNavList');
+        var objNor = $('#normalTNav');
+        var objUnNor = $('#btnNavList-nav');
+        if(w <= 768){//小屏幕
+          SHOW(objBtn);
+          //SHOW(objUnNor);
+          HIDE(objNor)
+        }
+        else{
+          HIDE(objBtn);
+          HIDE(objUnNor);
+          SHOW(objNor);
+        }
+      }
+      $('#btnNavList').on('click', function(){
+        HIDE($('#btnMess-nav'));
+        HIDE($('#btnMore-nav'));
+        TOGGLE('#btnNavList-nav');
+        return false;
+      })
+      $('#btnMess').on('click', function(){
+        HIDE($('#btnNavList-nav'));
+        HIDE($('#btnMore-nav'));
+        TOGGLE('#btnMess-nav');
+        return false;
+      })
+      $('#btnMore').on('click', function(){
+        HIDE($('#btnNavList-nav'));
+        HIDE($('#btnMess-nav'));
+        TOGGLE('#btnMore-nav');
+        return false;
+      })
+      $('body').on('click', function(){
+        HIDE($('#btnNavList-nav'));
+        HIDE($('#btnMess-nav'));
+        HIDE($('#btnMore-nav'));
+      })
+      window.onload = function(){
+        tNavControl();
+        var str = '<div class="list-group">';
+        for(var i=0; i<=100; i++){
+          str +=
+             '<a class="list-group-item" href="#" rel="external nofollow" >'
+            + '<span class="badge">' + i + '</span>'
+            + '<h4 class="list-group-item-heading">' + '大标题' + i + '</h4><br/>'
+            + '<p class="list-group-item-text">' + '备注' + i + '<br/>...' + '</p>'
+            + '<span class="glyphicon glyphicon-hand-up" aria-hidden="true" style="float:right;"></span>'
+            + '<br/>'
+            + '</a>';
+        }
+        str += '</div>';
+        $('.content').html(str);
+      }
+      window.onresize = tNavControl;
+    })();
+  </script>
+</body>
+</html>
