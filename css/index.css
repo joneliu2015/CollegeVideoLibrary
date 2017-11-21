@@ -98,11 +98,22 @@ span {
     .neirong{
         padding-top: 3.142857rem;
         }
+    .modal-body>iframe{
+    	width:566px;
+    	height: 400px;;
+    }       
 }
-@media screen {
+@media screen and (max-width:766px) {
     .neirong{
         padding-top: 2.142857rem;
         }
+    .modal-body>iframe{
+    	width: 100%;
+    	height: 100%;
+    	
+    }     
+        
+        
 }
 .advert>.zixun>.title,
 .neirong>.left>.title{
