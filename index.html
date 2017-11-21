@@ -78,11 +78,17 @@
             				$(this).find('.modal-dialog').css({  
                 			'margin-top': modalHeight  
             				});  }); 
-//          				
-//          				if($('#myModal').css("display")=="none"){
-//          					   window.location.reload();
-//          				}
-//          				
+            				
+            				//点击预览图时判断
+            				$('.modal').on('click',function(){
+            					if($('#myModal').css("display")=="none"){
+            					$('.modal-body').children('iframe').attr('src','');
+            				}else{
+            					$('.modal-body').children('iframe').attr('src','https://v.qq.com/iframe/player.html?vid=l05075dk2s4&tiny=0&auto=0');
+            				}
+            				})
+            				
+            				
             				
    						</script>
 				
