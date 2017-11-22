@@ -18,6 +18,9 @@
 		<link rel="stylesheet" href="css/index.css">
 		<script src="js/jquery1.11.3.js"></script>
 		<script src="lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+		
+		<script src="http://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	
 
 	</head>
 
@@ -88,8 +91,9 @@
 										<h6 class="modal-title" id="myModalLabel">Modal title</h6>
 									</div>
 									<div class="modal-body">
-										<embed height="415" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf" flashvars="aid=12398811&page=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></embed>
-										<!--<iframe frameborder="0" src="https://www.bilibili.com/video/av12398811/?spm_id_from=333.334.bili_douga.4" allowfullscreen></iframe>-->
+                                      <embed height="415" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf" flashvars="aid=12747981&page=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></embed>
+
+										
 									</div>
 								</div>
 							</div>
@@ -98,6 +102,23 @@
 				</div>
 				<!--设置视频弹窗居中的JS-->
 				<script>
+					
+//					$(document).ready(function(){
+//			$(".modal-body").each(function() {
+//			var playsrc = $(this).attr('data-u');
+//			var playwidth = $(this).attr('data-w');
+//			var playheight = $(this).attr('data-h');
+//			if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iOS|iPad|Backerry|WebOS|Symbian|Windows Phone|Phone)/i))) {
+//			$(this).html('<video width="'+playwidth+'" height="'+playheight+'" src="'+playsrc+'" controls></video>');
+//			}else{
+//			$(this).html('<embed wmode="transparent" width="'+playwidth+'" height="'+playheight+'" src="http://lanyes.org/demo/Lyplayer.swf?path='+playsrc+'&type=flv&fullscreen=true&autoplay=false&backcolor=99ff33&amp;frontcolor=ffffff" type="application/x-shockwave-flash" quality="high" allowfullscreen="true">');
+//			}
+//			})
+//			})
+					
+					
+					
+					
 					$('#myModal').on('shown.bs.modal', function(e) {
 						// 关键代码，如没将modal设置为 block，则$modala_dialog.height() 为零  
 						$(this).css('display', 'block');
@@ -106,7 +127,8 @@
 							'margin-top': modalHeight
 						});
 					});
-
+					
+					
 					//点击预览图时判断
 					$('.modal').on('click', function() {
 						if($('#myModal').css("display") == "none") {
