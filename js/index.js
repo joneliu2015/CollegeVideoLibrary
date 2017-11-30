@@ -13,6 +13,11 @@ $(".country>li").on("click",function(){
    //根据这个索引切换，下面的展示  
    $(".main").eq(index).addClass("selected").siblings().removeClass("selected");  
    
+   
+   
+   
+   
+   
 
 
 
