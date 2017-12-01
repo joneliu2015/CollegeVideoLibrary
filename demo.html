@@ -215,3 +215,18 @@
   </script>
 </body>
 </html>
+
+<script type="text/javascript">
+    $(function() {
+        $.getJSON('data.json', function(data) {
+            var items = [];
+            $.each(data, function(key, val) {
+                items.push('<li id="' + key + '">' + val + '</li>');
+            });
+            $('<ul/>', {
+                'class': 'list',
+                html: items.join('')
+            }).appendTo('body');
+        });
+    });
+</script>
