@@ -1,206 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="renderer" content="webkit">
-    <title>前途院校库-全球院校采访精彩回顾</title>
-    <!-- Bootstrap -->
-    <link href="lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <link rel="stylesheet" href="css/index.css">
-    <script src="js/jquery1.11.3.js"></script>
-    <script src="lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-    <script>
-        $(document).ready(function () {
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="renderer" content="webkit">
+		<!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
+		<title>前途院校库-全球院校采访精彩回顾</title>
+		<!-- Bootstrap -->
+		<link href="lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+    		<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    		<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]-->
+		<link rel="stylesheet" href="css/index.css">
+		<script src="lib/template-web.js"></script>
+		<script src="js/jquery1.11.3.js"></script>
+		<script src="lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+		<script src="lib/layer/layer.js"></script>
+		<!--<script type="text/javascript" src="artTemp.php?"></script>-->
+		<!--<script src="lib/layer/mobile/layer.js"></script>-->
 
-            console.log(1111);
+	</head>
 
-            $.getJSON('data.json', function (data) {
+	<body>
+		<header class="container-fluid ">
 
-                console.log(222);
+			<img class="top_pc  img-responsive center-block hidden-xs row" src="./img/top.jpg" alt="">
+			<img class="top_mobi  img-responsive center-block visible-xs-block row" src="./img/top_mobi.jpg" alt="">
+		</header>
 
+		<div class="container">
+			<ul class="row country">
+				<li class="col-xs-4 col-md-3 active">美国</li>
+				<li class="col-xs-4 col-md-3">英国</li>
+				<li class="col-xs-4 col-md-3">加拿大</li>
+				<li class="col-xs-4 col-md-3">澳大利亚</li>
+				<li class="col-xs-4 col-md-3">新西兰</li>
+				<li class="col-xs-4 col-md-3">欧洲</li>
+				<li class="col-xs-4 col-md-3">亚洲</li>
+			</ul>
+		</div>
+		<div class="line"></div>
+		<div class="container-fluid content ">
+			<div class="container neirong">
 
-              var mediahtml = "";
+				<div class="left fl">
+					<div class="titless ">
+						热门视频
+					</div>
+					<div class="medialist " id="medialist">
 
+						<!--<div class="yitiao clearfix">
+								<div class="reload pull-left">
+									<img src="img/reload1.jpg" alt="" />
+								</div>
+								<div class="info pull-left">
+									<div class='top'>
+										<span class="classify">家庭教育</span>
+										<span class="title">父母该如何做好家庭教育</span>
+										<span class="pubdate pull-right"></span>
+										<span class="glyphicon glyphicon-time pull-right"></span>
+										
+									</div>
+									<p class='intro text-overflow'>
+											好的教育，应该是父母通过孩子这把镜子，不断发现自我、修正自我、挖掘自我，并用新我来为孩子做示范和表率。我们是在教育孩子的过程中，遇见了更好的自己
+									</p>
+									<div class="bot">
+										<span class="jia">嘉</span>
+										<span class="name">刘亚春</span>
+										<span class="zhi">职</span>
+										<span class="position">新东方前途出国留学家庭预备营负责人</span>
+										<span class="glyphicon glyphicon-eye-open"></span>
+										<span class="click-rite">888</span>
+									</div>
+								</div>
+							</div>
+						-->
 
-                $('.medialist').empty();
-                $.each(data, function (i, data,urlmobi,urlpc) {
+					</div>
+				</div>
 
+				<!--模板引擎-->
 
-                    mediahtml+='<div class="media">' +
-                        '<div class="media-left">' +
-                        '<a data-toggle="modal" data-target="#myModal">' +
-                        '<img class="media-object" src="' + data["imgsrc"] +
-                        '" alt="">' +
-                        '</a>' + '</div>' +
-                        '<div class="media-body">' +
-                        '<div class="title">' +
-                        '<span class="classify">' +
-                        data["classify"] +
-                        '</span>' +
-                        '<span class="titlename media-heading">' +
-                        data['titlename'] +
-                        '</span>' +
-                        '</div>' +
-                        '<span class="time">' +
-                        '<span class="glyphicon glyphicon-time"></span> ' +
-                        '<span>' + data['pubdate'] + '</span>' +
-                        '<p>' + data["intro"] + '</p>' +
-                        '<div class="guest">' +
-                        '<span class="jia">嘉</span>' +
-                        '<span class="name">' + data["name"] + '</span>' +
-                        '<span class="position">' + data["position"] + '</span>' +
-                        '<span class="glyphicon glyphicon-eye-open"></span>' +
-                        '<span class="click-rite"></span>' +
-                        '</div>' +
-                        '</div>' +
+				
 
-                        '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">' +
-                        '<div class="modal-dialog" role="document">' +
-                        '<div class="modal-content">' +
-                        '<div class="modal-header">' +
-                        '<div class="modal-title">' +data['titlename']+'</div>'+
+				<script id="template" type="text/html">
+					<%for(var i =0; i<items.length;i++){%>
+					<div class="item clearfix">
+						<div class="reload pull-left">
+							<img src="<%=items[i].imgsrc%>" alt="" />
+						</div>
+						<div class="info pull-left">
+							<div class='top'>
+								<span class="classify"><%=items[i].classify%></span>
+								<span class="title"><%=items[i].title%></span>
+								<span class="pubdate pull-right"><%=items[i].pubdate%></span>
+								<span class="glyphicon glyphicon-time pull-right"></span>
+							</div>
+							<p class='intro text-overflow'>
+								<%=items[i].intro%>
+							</p>
+							<div class="bot">
+								<span class="jia">嘉</span>
+								<span class="name"><%=items[i].name%></span>
+								<span class="zhi">职</span>
+								<span class="position"><%=items[i].position%></span>
+								<span class="glyphicon glyphicon-eye-open"></span>
+								<span class="click-rite">888</span>
+							</div>
+						</div>
+					</div>
+					<%}%>
 
-                        '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
-                        '<span aria-hidden="true">&times;</span>' +
-                        '</button>'+
-                        '</div>'+
-                        '<div class="modal-body">'+
-                        '<iframe class="videos" frameborder="0" src="'+data['urlpc']+'" width="100%" height="50%" allowfullscreen></iframe>'+
-                        '</div>'+
-                        '</div>'+
-                        '</div>'+
-                        '</div>'+
-                        '</div>';
+				</script>
+				
+				<!--模板引擎-->
+				
+				
+				<script type="text/javascript">
+					$(function() {
+						window.onload=function() {
+							$.ajax({
+								url: 'artTemp.php',
+								type: 'get',
+								success: function(data) {
+									console.log(data);
+									//转化为js对象
+									var jsArr = JSON.parse(data);
+									//包装为js对象
+									console.log(jsArr)
+									var obj = {
+										items:jsArr
+									};
+									//调用模板引擎方法，填充数据
+									var result = template('template', obj);
+									$('.medialist').append(result);
 
+									//弹窗
+									var urlpc=jsArr[0].urlpc;
+									console.log(urlpc);
+									$('.reload').on('click',function(){
+									
+										console.log($(this).index());
+										layer.open({
+										type: 2,
+										title: false,
+										area: ['630px','360px'],
+										shade: 0.8,
+										closeBtn: 0,
+										shadeClose: true,
+										content:urlpc
+									    });
+									layer.msg('点击任意处关闭');
+									
+									})
+									
 
-//					var mobi=data['urlmobi'];
-//					var pc=data['urlpc'];
-//					console.log(mobi);
-//					console.log(pc);
-//                    $('#myModal').on('shown.bs.modal', function (e){
-//                        $('.videos').src='https://v.qq.com/iframe/player.html?vid=u05083r9wb5&tiny=0&auto=0';
-//                    });
+								}
+							})
 
+						}
 
-//					if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iOS|iPad|Backerry|WebOS|Symbian|Windows Phone|Phone)/i))) {
-//							$('.modal-body').append(mobi);
-//                             console.log("MOBILE");
-//
-//							}else{
-//							$('.modal-body').append(pc);
-//                            console.log("PC")
-//							};
+					})
+				
+				</script>
 
+				
 
-                    $('.modal').on('click', function () {
-                        if ($('#myModal').css("display") == "none") {
-                            $('.modal-body').children('iframe').attr('src', '');
-                        } else {
-                            $('.modal-body').children('iframe').attr('display','block');
-                        }
-                    })
-
-
-                });
-
-                console.log(mediahtml);
-
-                $('.medialist').html(mediahtml);
-
-
-
-            })
-
-
-        });
-
-
-        $('#myModal').on('shown.bs.modal', function (e) {
-            // 关键代码，如没将modal设置为 block，则$modala_dialog.height() 为零
-            $(this).css('display', 'block');
-            var modalHeight = $(window).height() / 2 - $('#myModal .modal-dialog').height() / 2;
-            $(this).find('.modal-dialog').css({
-                'margin-top': modalHeight
-            });
-        });
-
-
-//        点击预览图时判断
-
-
-    </script>
-
-
-</head>
-
-<body>
-<header class="container-fluid ">
-
-    <img class="top_pc  img-responsive center-block hidden-xs row" src="./img/top.jpg" alt="">
-    <img class="top_mobi  img-responsive center-block visible-xs-block row" src="./img/top_mobi.jpg" alt="">
-</header>
-
-<div class="container">
-    <ul class="row country">
-        <li class="col-xs-4 col-md-3 active">美国</li>
-        <li class="col-xs-4 col-md-3">英国</li>
-        <li class="col-xs-4 col-md-3">加拿大</li>
-        <li class="col-xs-4 col-md-3">澳大利亚</li>
-        <li class="col-xs-4 col-md-3">新西兰</li>
-        <li class="col-xs-4 col-md-3">欧洲</li>
-        <li class="col-xs-4 col-md-3">亚洲</li>
-    </ul>
-</div>
-<div class="line"></div>
-<div class="container-fluid content ">
-    <div class="container neirong">
-
-        <div class="left fl">
-            <div class="title">
-                热门视频
-            </div>
-            <div class="medialist">
-
-            </div>
-        </div>
-
-
-        <div class="right fr advert">
-            <div class="zixun">
-                <span class="title">热门资讯</span>
-                <span class="title fr">
+				<div class="right fr advert">
+					<div class="zixun">
+						<span class="title">热门资讯</span>
+						<span class="title fr">
 						<a href="#">更多</a>
 					</span>
-                <div class="link">
-                    <img src="./img/America.jpg" alt="">
-                    <img src="./img/xinnan.jpg" alt="">
-                </div>
-            </div>
-            <div class="chanpin">
-                <span class="title">热门产品</span>
-                <span class="title fr">
+						<div class="link">
+							<img src="./img/America.jpg" alt="">
+							<img src="./img/xinnan.jpg" alt="">
+						</div>
+					</div>
+					<div class="chanpin">
+						<span class="title">热门产品</span>
+						<span class="title fr">
 						<a href="#">更多</a>
 					</span>
-                <div class="link">
-                    <img src="./img/yingling.jpg" alt="">
-                    <img src="./img/beijing.jpg" alt="">
-                </div>
-            </div>
+						<div class="link">
+							<img src="./img/yingling.jpg" alt="">
+							<img src="./img/beijing.jpg" alt="">
+						</div>
+					</div>
 
-        </div>
-    </div>
-</div>
+				</div>
+			</div>
+		</div>
 
-<script src="js/index.js"></script>
-</body>
+		<script src="js/index.js"></script>
+	</body>
 
 </html>

@@ -2,8 +2,8 @@ body{
 
 }
 header{
-    padding-left: 0px !important; 
-    padding-right: 0px !important;
+    padding-left: 0rem !important; 
+    padding-right: 0rem !important;
 }
 .fl{
     float: left;
@@ -38,7 +38,7 @@ li{
     user-select:none;
     
 }
-@media screen and (min-width:767px) {
+@media screen and (min-width:54.785714rem) {
     li{
       
         font:bold 1.714286rem "MicrosoftYahei";
@@ -46,7 +46,7 @@ li{
         margin: 1rem 0 1rem 0;
     }
 }
-@media screen and (max-width:766px) {
+@media screen and (max-width:54.714286rem) {
     li{
         font:bold 1.428571rem "MicrosoftYahei";
         line-height: 2rem;
@@ -56,7 +56,7 @@ li{
 
 .country li  {
     display: block;
-    border-radius: 20px;
+    border-radius: 1.428571rem;
     
 }
 li:hover{
@@ -72,20 +72,20 @@ li:hover{
     display: block;
 }
 .line{
-    border-bottom: 1px solid #E5E5E5;
+    border-bottom: .071429rem solid #E5E5E5;
 }
 
 .content{
     background-color: #F9F9F9;
 }
-@media screen and (max-width:767px){
+@media screen and (max-width:54.785714rem){
     .neirong>.left>.title,
     .advert{
         display: none;
     };
 }
 .advert{
-    width: 260px;
+    width: 18.571429rem;
     float: right;
 }
 span {
@@ -94,16 +94,16 @@ span {
 
 
 
-@media screen and (min-width:767px) {
+@media screen and (min-width:54.785714rem) {
     .neirong{
         padding-top: 3.142857rem;
         }
     .modal-body>iframe{
-    	width:566px;
-    	height: 400px;;
+    	width:40.428571rem;
+    	height: 28.571429rem;;
     }       
 }
-@media screen and (max-width:766px) {
+@media screen and (max-width:54.714286rem) {
     .neirong{
         padding-top: 2.142857rem;
         }
@@ -115,8 +115,7 @@ span {
         
         
 }
-.advert>.zixun>.title,
-.neirong>.left>.title{
+.advert>.zixun>.title{
 margin-bottom: 2.142857rem;
 }
 
@@ -124,5 +123,78 @@ margin-bottom: 2.142857rem;
     width: 14.285714rem;
     height: 10.714286rem;
 
+}
+.left{
+    width:70.571429rem;
+    
+   
+}
+.item{
+   margin-top: 2.142857rem; 
+   padding-bottom: 2.142857rem; 
+   border-bottom: 1px solid #ccc;
+}
+
+.info{
+    width: 48rem;
+    padding: 0 1.714286rem 0 1.428571rem;
+}
+.classify{
+    width: 6rem;
+    height:2rem;
+    font:bold 1rem "microsoftYahei";
+    line-height: 2rem;
+    text-align: center;
+    color: #fff;
+    background: #4A74E2;
+    border-radius: 3px;
+    
+}
+.title{
+    font:bold 1.714286rem "microsoftYahei";
+}
+
+.glyphicon-time,
+.pubdate,
+{
+color: rgb(145, 141, 141);
+}
+
+.intro{
+    color: rgb(117, 132, 143);
+    line-height: 2.5rem;
+    font-size: 14px;
+}
+
+.jia{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 2rem;
+    color: #fff;
+    background-color: #F18B8B;
+}
+
+.name{
+    font: bold .714286rem "microsoftYahei";
+}
+
+.zhi{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 2rem;
+    color: #fff;
+    background-color: #9AABB8;
+}
+.position{
+    font:bold .714286rem "microsoftYahei"; 
+    color: rgb(77, 86, 94)
+}
+.glyphicon-eye-open,
+.click-rite{
+    color: rgb(111, 124, 136)  ;
 }
 
