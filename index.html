@@ -86,8 +86,6 @@
 
 				<!--模板引擎-->
 
-				
-
 				<script id="template" type="text/html">
 					<%for(var i =0; i<items.length;i++){%>
 					<div class="item clearfix">
@@ -117,13 +115,12 @@
 					<%}%>
 
 				</script>
-				
+
 				<!--模板引擎-->
-				
-				
+
 				<script type="text/javascript">
 					$(function() {
-						window.onload=function() {
+						window.onload = function() {
 							$.ajax({
 								url: 'artTemp.php',
 								type: 'get',
@@ -134,31 +131,46 @@
 									//包装为js对象
 									console.log(jsArr)
 									var obj = {
-										items:jsArr
+										items: jsArr
 									};
 									//调用模板引擎方法，填充数据
 									var result = template('template', obj);
 									$('.medialist').append(result);
 
-									//弹窗
-									var urlpc=jsArr[0].urlpc;
-									console.log(urlpc);
-									$('.reload').on('click',function(){
+									//点击国家按钮显示指定内容
+									$(".country>li").on("click", function() {
+										$(this).addClass('active').siblings().removeClass('active');
+
+										// alert("被电击了")
+
+										//获取当前tab中鼠标停在的table栏的索引  
+										var index = $(this).index();
+										console.log(index);
+										//根据这个索引切换，下面的展示  
+										$("li").eq(index).addClass("selected").siblings().removeClass("selected");
+
+									});
 									
+									
+
+									//弹窗
+									var urlpc = jsArr[0].urlpc;
+									console.log(urlpc);
+									$('.reload').on('click', function() {
+
 										console.log($(this).index());
 										layer.open({
-										type: 2,
-										title: false,
-										area: ['630px','360px'],
-										shade: 0.8,
-										closeBtn: 0,
-										shadeClose: true,
-										content:urlpc
-									    });
-									layer.msg('点击任意处关闭');
-									
+											type: 2,
+											title: false,
+											area: ['630px', '360px'],
+											shade: 0.8,
+											closeBtn: 0,
+											shadeClose: true,
+											content: urlpc
+										});
+										layer.msg('点击任意处关闭');
+
 									})
-									
 
 								}
 							})
@@ -166,10 +178,7 @@
 						}
 
 					})
-				
 				</script>
-
-				
 
 				<div class="right fr advert">
 					<div class="zixun">
