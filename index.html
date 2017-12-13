@@ -35,13 +35,13 @@
 
 		<div class="container">
 			<ul class="row country">
-				<li class="col-xs-4 col-md-3 active">美国</li>
-				<li class="col-xs-4 col-md-3">英国</li>
-				<li class="col-xs-4 col-md-3">加拿大</li>
-				<li class="col-xs-4 col-md-3">澳大利亚</li>
-				<li class="col-xs-4 col-md-3">新西兰</li>
-				<li class="col-xs-4 col-md-3">欧洲</li>
-				<li class="col-xs-4 col-md-3">亚洲</li>
+				<li class="col-xs-4 col-md-3 active selected" id="Americia">美国</li>
+				<li class="col-xs-4 col-md-3" id="England">英国</li>
+				<li class="col-xs-4 col-md-3" id="Canada">加拿大</li>
+				<li class="col-xs-4 col-md-3" id="Austrilia">澳大利亚</li>
+				<li class="col-xs-4 col-md-3" id="NewZealand">新西兰</li>
+				<li class="col-xs-4 col-md-3" id="Europe">欧洲</li>
+				<li class="col-xs-4 col-md-3" id="Asia">亚洲</li>
 			</ul>
 		</div>
 		<div class="line"></div>
@@ -89,8 +89,10 @@
 				<script id="template" type="text/html">
 					<%for(var i =0; i<items.length;i++){%>
 					<div class="item clearfix">
-						<div class="reload pull-left">
-							<img src="<%=items[i].imgsrc%>" alt="" />
+						<div class="reload pull-left" >
+							<div>
+							<img class="reloadimg" src="<%=items[i].imgsrc%>" alt="" />
+						   </div>
 						</div>
 						<div class="info pull-left">
 							<div class='top'>
@@ -119,46 +121,76 @@
 				<!--模板引擎-->
 
 				<script type="text/javascript">
-					$(function() {
-						window.onload = function() {
-							$.ajax({
-								url: 'artTemp.php',
-								type: 'get',
-								success: function(data) {
-									console.log(data);
-									//转化为js对象
-									var jsArr = JSON.parse(data);
-									//包装为js对象
-									console.log(jsArr)
+					window.onload = function() {
+						$.ajax({
+							url: 'artTemp.php',
+							type: 'get',
+							success: function(data, key) {
+								console.log(data);
+								//转化为js对象
+								var jsArr = JSON.parse(data);
+
+								//包装为js对象
+								console.log(jsArr)
+
+								//遍历JSON对象，将JSON对象转化为数组
+								for(var key in jsArr) {
+									console.log(jsArr[key])
+								};
+
+								//点击国家按钮显示指定内容
+								$("body").on("click", ".country>li", function(e) {
+
+									$(this).addClass('active').siblings().removeClass('active');
+
+									// alert("被电击了")
+
+									//获取当前tab中鼠标停在的table栏的索引  
+									var index = $(this).index();
+									console.log(index);
+									//根据这个索引切换，下面的展示  
+									$("li").eq(index).addClass("selected").siblings().removeClass("selected");
+
+									//获取当前点击项目的ID
+									var indexId = $(this).attr('id');
+									console.log(indexId);
+
+									//新建数组，将当前点击项的id赋值给当前要显示的数组作为KEY值，就获取的当前显示项的数据
+									console.log(jsArr[this.id])
+
+									var jsArri = jsArr[this.id];
+									//新建对象
 									var obj = {
-										items: jsArr
+										items: jsArri
 									};
+									console.log(obj)
+
 									//调用模板引擎方法，填充数据
 									var result = template('template', obj);
-									$('.medialist').append(result);
-
-									//点击国家按钮显示指定内容
-									$(".country>li").on("click", function() {
-										$(this).addClass('active').siblings().removeClass('active');
-
-										// alert("被电击了")
-
-										//获取当前tab中鼠标停在的table栏的索引  
-										var index = $(this).index();
-										console.log(index);
-										//根据这个索引切换，下面的展示  
-										$("li").eq(index).addClass("selected").siblings().removeClass("selected");
-
-									});
-									
-									
-
+									$('.medialist').html(result);
+								
 									//弹窗
-									var urlpc = jsArr[0].urlpc;
-									console.log(urlpc);
-									$('.reload').on('click', function() {
 
-										console.log($(this).index());
+									console.log(jsArri);
+
+
+
+									//点击预览图显示弹窗
+								
+								
+										$(".reloadimg,.title").on("click",function() {
+                                        
+										//取得当前点击的预览图的下标
+									
+										var indexB = $(this).parent().parent().parent().index();
+								
+//										alert(indexB);
+										
+										//将预览图的下标作为当前显示的国家数据的中的urlpc值
+										
+                                        var urlpc=jsArri[indexB].urlpc;
+                                        
+                                        console.log(urlpc);
 										layer.open({
 											type: 2,
 											title: false,
@@ -168,16 +200,25 @@
 											shadeClose: true,
 											content: urlpc
 										});
-										layer.msg('点击任意处关闭');
+										layer.msg('点击任意处关闭'); 
+											
+									});
+											
+						
+										
+										
+										
+	
 
-									})
+								});
 
-								}
-							})
+								//加载第一项美国
+								$("#Americia").trigger("click");
 
-						}
+							}
+						})
 
-					})
+					}
 				</script>
 
 				<div class="right fr advert">
