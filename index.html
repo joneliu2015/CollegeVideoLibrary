@@ -3,6 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<meta name="renderer" content="webkit">
@@ -21,9 +22,8 @@
 		<script src="js/jquery1.11.3.js"></script>
 		<script src="lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 		<script src="lib/layer/layer.js"></script>
-		<!--<script type="text/javascript" src="artTemp.php?"></script>-->
-		<!--<script src="lib/layer/mobile/layer.js"></script>-->
 
+         
 	</head>
 
 	<body>
@@ -113,6 +113,8 @@
 								<span class="click-rite">888</span>
 							</div>
 						</div>
+					
+	
 					</div>
 					<%}%>
 
@@ -192,27 +194,48 @@
 										//将预览图的下标作为当前显示的国家数据的中的urlpc值
 										
                                         var urlpc=jsArri[indexB].urlpc;
+                                        var title=jsArri[indexB].title
                                         
                                         console.log(urlpc);
-										layer.open({
+                                            if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)){
+                                                 layer.open({
 											type: 2,
 											title: false,
-											area: ['60%', '60%'],
-											shade: 0.8,
+											area: ['320px', '240px'],
+											shade: 0.6,
 											closeBtn: 0,
 											shadeClose: true,
-											content: urlpc
-										});
-										layer.msg('点击任意处关闭'); 
+											content: urlpc,
 											
+										    });
+										    layer.msg('点击任意处可关闭',function(){
+										    	time:500
+										    })
+										    
+                                             }else{
+                                             	layer.open({
+											type: 2,
+											title: title,
+											area: ['640px', '480px'],
+											shade: 0.6,
+											closeBtn: 0,
+											shadeClose: true,
+											content: urlpc,
+											
+										    });
+										    layer.msg('点击任意处可关闭',function(){
+										    	time:500
+										    })
+                                             }
+                                        //Layer弹窗开始
+										
+//										
+										//Layer弹窗结束
+										
+									
 									});
-											
-						
-										
-										
-										
+												
 	
-
 								});
 
 								//加载第一项美国
