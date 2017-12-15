@@ -98,22 +98,10 @@ span {
     .neirong{
         padding-top: 3.142857rem;
         }
-    .modal-body>iframe{
-    	width:40.428571rem;
-    	height: 28.571429rem;;
-    }       
+      
 }
 @media screen and (max-width:54.714286rem) {
-    .neirong{
-        padding-top: 2.142857rem;
-        }
-    .modal-body>iframe{
-    	width: 100%;
-    	height: 100%;
-    	
-    }     
-        
-        
+    
 }
 .advert>.zixun>.title{
 margin-bottom: 2.142857rem;
@@ -124,11 +112,11 @@ margin-bottom: 2.142857rem;
     height: 10.714286rem;
 
 }
-.left{
-    width:70.571429rem;
-    
-   
-}
+
+
+
+
+
 .item{
    margin-top: 2.142857rem; 
    padding-bottom: 2.142857rem; 
@@ -157,11 +145,11 @@ margin-bottom: 2.142857rem;
 .glyphicon-time,
 .pubdate,
 {
-color: rgb(145, 141, 141);
+color:#C8C8C8;
 }
 
 .intro{
-    color: rgb(117, 132, 143);
+    color: #9EA7A8;
     line-height: 2.5rem;
     font-size: 14px;
 }
@@ -197,4 +185,54 @@ color: rgb(145, 141, 141);
 .click-rite{
     color: rgb(111, 124, 136)  ;
 }
+/*视频栏目列表移动端*/
+@media screen and (min-width:54.785714rem) {
+    
+}
+@media screen and (max-width:54.714286rem) {
+       .titless,
+       .bot,
+       .classify
+       {
+    	display: none;
+    }  
+    .reloadimg{
+        width: 100%;
+        height: 100%
+    }
+    .item{
+    	width: 100%;
+    	margin-top: 1rem;
+    	padding-bottom: 1rem;
+    }
+    .reload{
+    	width: 30%;
+    }
+    .info{
+    	width:70%;
+    	padding:0 1rem 
+    }
+    .top>.title{
+    	font: 1.5rem "microsoftYahei";
+    }
+    .intro{
+    	line-height: 1.5rem;
+    	font-size:0.5rem;
+    	color: #9EA7A8;
+    	
+    	overflow:hidden; 
 
+       text-overflow:ellipsis;
+
+         display:-webkit-box; 
+
+       -webkit-box-orient:vertical;
+
+        -webkit-line-clamp:2; 
+    }
+    .glyphicon,
+    .pubdate{
+    	color:#C8C8C8;
+    }
+      
+}

@@ -23,7 +23,6 @@
 		<script src="lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 		<script src="lib/layer/layer.js"></script>
 
-         
 	</head>
 
 	<body>
@@ -45,7 +44,7 @@
 			</ul>
 		</div>
 		<div class="line"></div>
-		<div class="container-fluid content ">
+		<div class=" content ">
 			<div class="container neirong">
 
 				<div class="left fl">
@@ -89,17 +88,17 @@
 				<script id="template" type="text/html">
 					<%for(var i =0; i<items.length;i++){%>
 					<div class="item clearfix">
-						<div class="reload pull-left" >
+						<div class="reload pull-left">
 							<div>
-							<img class="reloadimg" src="<%=items[i].imgsrc%>" alt="" />
-						   </div>
+								<img class="reloadimg" src="<%=items[i].imgsrc%>" alt="" />
+							</div>
 						</div>
 						<div class="info pull-left">
 							<div class='top'>
 								<span class="classify"><%=items[i].classify%></span>
 								<span class="title"><%=items[i].title%></span>
-								<span class="pubdate pull-right"><%=items[i].pubdate%></span>
-								<span class="glyphicon glyphicon-time pull-right"></span>
+								<span class="pubdate "><%=items[i].pubdate%></span>
+								<span class="glyphicon glyphicon-time "></span>
 							</div>
 							<p class='intro text-overflow'>
 								<%=items[i].intro%>
@@ -109,12 +108,10 @@
 								<span class="name"><%=items[i].name%></span>
 								<span class="zhi">职</span>
 								<span class="position"><%=items[i].position%></span>
-								<span class="glyphicon glyphicon-eye-open"></span>
-								<span class="click-rite">888</span>
+								<span class="click-rite"></span>
 							</div>
 						</div>
-					
-	
+
 					</div>
 					<%}%>
 
@@ -126,10 +123,10 @@
 					window.onload = function() {
 						var data;
 						$.ajax({
-							dataType:'json',
-							url:'data.json',
-							data:data,
-							type:'get',
+							dataType: 'json',
+							url: 'data.json',
+							data: data,
+							type: 'get',
 							success: function(data, key) {
 								console.log(data);
 								//转化为js对象
@@ -170,72 +167,73 @@
 									};
 									console.log(obj)
 
-									//调用模板引擎方法，填充数据
+									
+									
+										//调用模板引擎方法，填充数据
 									var result = template('template', obj);
 									$('.medialist').html(result);
-								
-									//弹窗
 
 									console.log(jsArri);
+									
 
-
+									// 
 
 									//点击预览图显示弹窗
-								
-								
-										$(".reloadimg,.title").on("click",function() {
-                                        
+
+									$(".reloadimg,.title").on("click", function() {
+
 										//取得当前点击的预览图的下标
-									
+
 										var indexB = $(this).parent().parent().parent().index();
-								
-//										alert(indexB);
-										
+
+										//										alert(indexB);
+
 										//将预览图的下标作为当前显示的国家数据的中的urlpc值
-										
-                                        var urlpc=jsArri[indexB].urlpc;
-                                        var title=jsArri[indexB].title
-                                        
-                                        console.log(urlpc);
-                                            if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)){
-                                                 layer.open({
-											type: 2,
-											title: false,
-											area: ['320px', '240px'],
-											shade: 0.6,
-											closeBtn: 0,
-											shadeClose: true,
-											content: urlpc,
-											
-										    });
-										    layer.msg('点击任意处可关闭',function(){
-										    	time:500
-										    })
-										    
-                                             }else{
-                                             	layer.open({
-											type: 2,
-											title: title,
-											area: ['640px', '480px'],
-											shade: 0.6,
-											closeBtn: 0,
-											shadeClose: true,
-											content: urlpc,
-											
-										    });
-										    layer.msg('点击任意处可关闭',function(){
-										    	time:500
-										    })
-                                             }
-                                        //Layer弹窗开始
-										
-//										
-										//Layer弹窗结束
-										
-									
+
+										var urlpc = jsArri[indexB].urlpc;
+										var title = jsArri[indexB].title
+
+										console.log(urlpc);
+										if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)) {
+											//Layer弹窗开始
+											layer.open({
+												type: 2,
+												title: false,
+												area: ['320px', '240px'],
+												shade: 0.6,
+												closeBtn: 0,
+												shadeClose: true,
+												content: urlpc,
+
+											});
+											layer.msg('点击任意处可关闭', function() {
+													time: 500
+												}
+												//Layer弹窗结束
+											)
+
+										} else {
+											//Layer弹窗开始
+											layer.open({
+												type: 2,
+												title: title,
+												area: ['640px', '360px'],
+												shade: 0.6,
+												closeBtn: 0,
+												shadeClose: true,
+												content: urlpc,
+
+											});
+											layer.msg('点击任意处可关闭', function() {
+												time: 500
+											})
+											//Layer弹窗结束
+										}
+
+										//										
+
 									});
-												
-	
+
 								});
 
 								//加载第一项美国
