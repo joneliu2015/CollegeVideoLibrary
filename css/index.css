@@ -98,6 +98,9 @@ span {
     .neirong{
         padding-top: 3.142857rem;
         }
+    .reload{
+    	cursor: pointer;
+    }    
       
 }
 @media screen and (max-width:54.714286rem) {
@@ -105,6 +108,7 @@ span {
 }
 .advert>.zixun>.title{
 margin-bottom: 2.142857rem;
+
 }
 
 .list-group{
@@ -140,6 +144,7 @@ margin-bottom: 2.142857rem;
 }
 .top>.title{
     font:bold 1.714286rem "microsoftYahei";
+    cursor: pointer;
 }
 
 .glyphicon-time,
@@ -165,7 +170,7 @@ color:#C8C8C8;
 }
 
 .name{
-    font: bold .714286rem "microsoftYahei";
+    font: bold 1rem "microsoftYahei";
 }
 
 .zhi{
@@ -178,7 +183,7 @@ color:#C8C8C8;
     background-color: #9AABB8;
 }
 .position{
-    font:bold .714286rem "microsoftYahei"; 
+    font:bold 1rem "microsoftYahei"; 
     color: rgb(77, 86, 94)
 }
 .glyphicon-eye-open,
@@ -210,14 +215,15 @@ color:#C8C8C8;
     }
     .info{
     	width:70%;
-    	padding:0 1rem 
+    	padding:0 1rem ;
     }
     .top>.title{
     	font: 1.5rem "microsoftYahei";
+    	cursor: pointer;
     }
     .intro{
     	line-height: 1.5rem;
-    	font-size:0.5rem;
+    	font-size:1rem;
     	color: #9EA7A8;
     	
     	overflow:hidden; 
