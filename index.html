@@ -79,41 +79,42 @@
 								</div>
 							</div>
 						-->
-
+                     
 					</div>
+					<div id="page" style="width:450px;margin:0 auto;"></div>  
 				</div>
 
 				<!--模板引擎-->
 
 				<script id="template" type="text/html">
-					<%for(var i =0; i<items.length;i++){%>
+					
 					<div class="item clearfix">
 						<div class="reload pull-left">
 							<div>
-								<img class="reloadimg" src="<%=items[i].imgsrc%>" alt="" />
+								<img class="reloadimg" src="<%=items.imgsrc%>" alt="" />
 							</div>
 						</div>
 						<div class="info pull-left">
 							<div class='top'>
-								<span class="classify"><%=items[i].classify%></span>
-								<span class="title"><%=items[i].title%></span>
-								<span class="pubdate "><%=items[i].pubdate%></span>
+								<span class="classify"><%=items.classify%></span>
+								<span class="title"><%=items.title%></span>
+								<span class="pubdate "><%=items.pubdate%></span>
 								<span class="glyphicon glyphicon-time "></span>
 							</div>
 							<p class='intro text-overflow'>
-								<%=items[i].intro%>
+								<%=items.intro%>
 							</p>
 							<div class="bot">
 								<span class="jia">嘉</span>
-								<span class="name"><%=items[i].name%></span>
+								<span class="name"><%=items.name%></span>
 								<span class="zhi">职</span>
-								<span class="position"><%=items[i].position%></span>
+								<span class="position"><%=items.position%></span>
 								<span class="click-rite"></span>
 							</div>
 						</div>
 
 					</div>
-					<%}%>
+				
 
 				</script>
 
@@ -162,21 +163,86 @@
 
 									var jsArri = jsArr[this.id];
 									//新建对象
-									var obj = {
-										items: jsArri
-									};
-									console.log(obj)
-
+//									var obj = {
+//										items: jsArri
+//									};
+//									console.log(obj)
+//
+//									
+//									
+//										//调用模板引擎方法，填充数据
+//									var result = template('template', obj);
+//									$('.medialist').html(result);
+//
+//									console.log(jsArri);
 									
-									
-										//调用模板引擎方法，填充数据
-									var result = template('template', obj);
-									$('.medialist').html(result);
 
-									console.log(jsArri);
-									
+									// 分页
+									$('#page').html("");
+						            var pageData=jsArri.length;
+						            console.log(pageData)
+									$(function(){
+										var count = pageData;//设置总条数
+										console.log(count)
+										var pageSize=5;//每页显示的条数
+										var pageCount = Math.ceil(count/pageSize);//能显示几页
+										console.log(pageCount)
+										var currentPage=1;//默认显示第一页
+										//做个分页按钮
+										for (var i=1;i<=pageCount;i++) {
+											var pageN='<page class="pageName" href="" selectPage="'+i+'">第'+i+'页</page>'
+											$('#page').append(pageN);
+										}
+										
+										//默认显示第一页
+										 $('.medialist').html(''); 
+										for(i=(currentPage-1)*pageSize;i<pageSize*currentPage;i++){   
+											 console.log(i);
+											 console.log(jsArri[i]);
+											 var obj = {
+										         items: jsArri[i]
+									          };
+									          console.log(obj);
+									          
+									         var result = template('template', obj);
+//									         $('.medialist').html(result);
 
-									// 
+									         console.log(result); 
+											 
+											 
+                                            $('.medialist').append(result);  
+                                             };
+                                             
+                                         //显示选择页的内容  
+                                         $('page').click(function(){ 
+                                         	console.log("SSSS")
+                                     var selectPage=$(this).attr('selectPage');  
+                                             $('.medialist').html('');  
+//                            
+                                             for(i=(selectPage-1)*pageSize;i<pageSize*selectPage;i++){  
+                                                 var obj = {
+										         items: jsArri[i]
+									          };
+									          console.log(obj);
+									          
+									         var result = template('template', obj);
+//									
+
+									         console.log(result); 
+
+                                            $('.medialist').append(result);  
+                                             }  
+//                                           $('.medialist').append(end);  
+                                             });       
+										     
+										
+									})
+                                    
+
+
+
+
+
 
 									//点击预览图显示弹窗
 
@@ -247,23 +313,24 @@
 
 				<div class="right fr advert">
 					<div class="zixun">
-						<span class="title">热门资讯</span>
-						<span class="title fr">
-						<a href="#">更多</a>
-					</span>
+						<span class="title1">热门资讯</span>
+						<span class="title1 fr">
+						    <a href="http://liuxue.xdf.cn/xian/">更多》</a>
+					    </span>
 						<div class="link">
-							<img src="./img/America.jpg" alt="">
-							<img src="./img/xinnan.jpg" alt="">
+							<a href="http://liuxue.xdf.cn/xian/mglh/xjslh/pmjx/1157967.shtml"><img src="./img/America.jpg" alt=""></a> 
+							<a href="http://liuxue.xdf.cn/blog/zhaoxinnan/"><img src="./img/xinnan.jpg" alt=""></a> 
 						</div>
 					</div>
 					<div class="chanpin">
-						<span class="title">热门产品</span>
-						<span class="title fr">
-						<a href="#">更多</a>
+						<span class="title1">热门产品</span>
+						<span class="title1 fr">
+						<a href="http://liuxue.xdf.cn/Product/">更多》</a>
 					</span>
 						<div class="link">
-							<img src="./img/yingling.jpg" alt="">
-							<img src="./img/beijing.jpg" alt="">
+							<a href="http://liuxue.xdf.cn/special/aus/growingup/"><img src="./img/yingling.jpg" alt=""></a> 
+							<a href="http://liuxue.xdf.cn/special/usa/postgraduate_bjts/"><img src="./img/beijing.jpg" alt=""></a>
+							
 						</div>
 					</div>
 

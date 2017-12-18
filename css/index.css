@@ -106,10 +106,17 @@ span {
 @media screen and (max-width:54.714286rem) {
     
 }
-.advert>.zixun>.title{
+.advert>.zixun>.title1,
+.advert>.chanpin>.title1
+{
 margin-bottom: 2.142857rem;
 
 }
+
+.chanpin{
+	margin-top: 70px;
+}
+
 
 .list-group{
     width: 14.285714rem;
@@ -241,4 +248,8 @@ color:#C8C8C8;
     	color:#C8C8C8;
     }
       
+}
+.link a:nth-child(2){
+	margin-top:18px;
+	display: block;
 }
