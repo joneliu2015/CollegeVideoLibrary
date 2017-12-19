@@ -1,24 +1,11 @@
-//(function(){
-//
-//
-//$(".country>li").on("click",function(){
-//  $(this).addClass('active').siblings().removeClass('active');
-//  
-//  
-//  
-//  // alert("被电击了")
-//  
-//  
-//  //获取当前tab中鼠标停在的table栏的索引  
-// var index = $(this).index();  
-//     console.log(index);  
-// //根据这个索引切换，下面的展示  
-// $("li").eq(index).addClass("selected").siblings().removeClass("selected");  
-// 
-//});
-   
-   
-   
 
 
-//})()
+
+$(".toTop").click(function() {
+      $("html,body").animate({scrollTop:0}, 500);
+  }); 
+  
+function openWin()
+    {
+        window.open('http://chat.looyuoms.com/chat/chat/p.do?c=20002134&f=10071643&g=10068659&site=15890&refer=biaoji&loc=biaoji','','height=500, width=800,top=200, left=300,  toolbar =no, menubar=no, scrollbars=no, resizable=no, location=no, status=no') 
+    } ;  

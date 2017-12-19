@@ -197,10 +197,45 @@ color:#C8C8C8;
 .click-rite{
     color: rgb(111, 124, 136)  ;
 }
-/*视频栏目列表移动端*/
+/*视频栏目列表PC端*/
 @media screen and (min-width:54.785714rem) {
+    .pageName{
+    	width: 3rem;
+    	height: 3rem;
+    	margin: 2rem 1rem;
+    	text-align: center;
+    	color: #8C8C8C;
+    	line-height: 3rem;
+    	border: 1px solid #8C8C8C;
+    	border-radius: 50% ;
+    }
+    #page{
+    	text-align:center
+    }
+    .choosed{
+	color: #0F0F0F;
+	border:1px solid #0F0F0F
+    }
+    .no-content{
+    	width:40rem;
+    	margin-top: 10rem;
+    	margin-left: 10rem;
+    }  	
     
+    .toTop{
+    	display: block;
+    	position: fixed;
+    	top: 50%;
+    	right: 8rem;
+    }
+    .leyuu{
+    	display: block;
+    	position: fixed;
+    	top: 30%;
+    	right: 6rem;
+    }
 }
+/*视频栏目列表移动端*/
 @media screen and (max-width:54.714286rem) {
        .titless,
        .bot,
@@ -247,9 +282,36 @@ color:#C8C8C8;
     .pubdate{
     	color:#C8C8C8;
     }
-      
+    .pageName{
+    	width: 2rem;
+    	height: 2rem;
+    	margin: 1rem 1rem;
+    	text-align: center;
+    	background-color: #FFFFFF;
+    	line-height: 2rem;
+    	border: 1px solid #F9F9F9;
+    	border-radius: 50% ;
+    }
+    #page{
+    	text-align:center
+    }
+    .choosed{
+	background-color: #1E9FFF;
+	border:1px solid #FFFFFF;
+	color: #FFFFFF;
+    }	
+    .no-content{
+    	width:28rem;
+    }
+    
+    .leyuu,
+    .toTop{
+    	display: none;
+    }  
 }
 .link a:nth-child(2){
 	margin-top:18px;
 	display: block;
 }
+
+

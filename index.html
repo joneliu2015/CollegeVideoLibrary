@@ -79,15 +79,15 @@
 								</div>
 							</div>
 						-->
-                     
-					</div>
-					<div id="page" style="width:450px;margin:0 auto;"></div>  
-				</div>
 
+					</div>
+					<div id="page" ></div>
+				</div>
+    			
 				<!--模板引擎-->
 
 				<script id="template" type="text/html">
-					
+
 					<div class="item clearfix">
 						<div class="reload pull-left">
 							<div>
@@ -114,7 +114,6 @@
 						</div>
 
 					</div>
-				
 
 				</script>
 
@@ -162,87 +161,111 @@
 									console.log(jsArr[this.id])
 
 									var jsArri = jsArr[this.id];
-									//新建对象
-//									var obj = {
-//										items: jsArri
-//									};
-//									console.log(obj)
-//
-//									
-//									
-//										//调用模板引擎方法，填充数据
-//									var result = template('template', obj);
-//									$('.medialist').html(result);
-//
-//									console.log(jsArri);
 									
+									if(jsArri=== undefined || jsArri.length == 0){
+										$('.medialist').html('<img class="no-content" style="" src="img/no_content.png" alt="" />');
+//										$('.left').removeClass('fl');
+										$('#page').hide();
+//										alert("木有啦！！！")
+									}else{
+										$('#page').show();
+									}
+									//新建对象
+									//									var obj = {
+									//										items: jsArri
+									//									};
+									//									console.log(obj)
+									//
+									//									
+									//									
+									//										//调用模板引擎方法，填充数据
+									//									var result = template('template', obj);
+									//									$('.medialist').html(result);
+									//
+									//									console.log(jsArri);
 
 									// 分页
 									$('#page').html("");
-						            var pageData=jsArri.length;
-						            console.log(pageData)
-									$(function(){
-										var count = pageData;//设置总条数
+									var pageData = jsArri.length;
+									console.log(pageData)
+									$(function() {
+										var count = pageData; //设置总条数
 										console.log(count)
-										var pageSize=5;//每页显示的条数
-										var pageCount = Math.ceil(count/pageSize);//能显示几页
+										var pageSize = 5; //每页显示的条数
+										var pageCount = Math.ceil(count / pageSize); //能显示几页
 										console.log(pageCount)
-										var currentPage=1;//默认显示第一页
+										var currentPage = 1; //默认显示第一页
 										//做个分页按钮
-										for (var i=1;i<=pageCount;i++) {
-											var pageN='<page class="pageName" href="" selectPage="'+i+'">第'+i+'页</page>'
+										for(var i = 1; i <= pageCount; i++) {
+											var pageN = '<span class="pageName"  selectPage="' + i + '">' + i + '</span>'
 											$('#page').append(pageN);
 										}
-										
+
 										//默认显示第一页
-										 $('.medialist').html(''); 
-										for(i=(currentPage-1)*pageSize;i<pageSize*currentPage;i++){   
-											 console.log(i);
-											 console.log(jsArri[i]);
-											 var obj = {
-										         items: jsArri[i]
-									          };
-									          console.log(obj);
-									          
-									         var result = template('template', obj);
-//									         $('.medialist').html(result);
+										$('.medialist').html('');
+										for(i = (currentPage - 1) * pageSize; i < pageSize * currentPage; i++) {
+											console.log(i);
+											console.log(jsArri[i]);
+											var obj = {
+												items: jsArri[i]
+											};
+											console.log(obj);
 
-									         console.log(result); 
-											 
-											 
-                                            $('.medialist').append(result);  
-                                             };
-                                             
-                                         //显示选择页的内容  
-                                         $('page').click(function(){ 
-                                         	console.log("SSSS")
-                                     var selectPage=$(this).attr('selectPage');  
-                                             $('.medialist').html('');  
-//                            
-                                             for(i=(selectPage-1)*pageSize;i<pageSize*selectPage;i++){  
-                                                 var obj = {
-										         items: jsArri[i]
-									          };
-									          console.log(obj);
-									          
-									         var result = template('template', obj);
-//									
-
-									         console.log(result); 
-
-                                            $('.medialist').append(result);  
-                                             }  
-//                                           $('.medialist').append(end);  
-                                             });       
-										     
+											var result = template('template', obj);
 										
+
+											console.log(result);
+
+											$('.medialist').append(result);
+											$('#page span:first-child').addClass('choosed')
+										};
+
+										//显示选择页的内容  
+
+										$('.pageName').click(function() {
+											console.log("SSSS")
+											var selectPage = $(this).attr('selectPage');
+											console.log(selectPage);
+											$('#page').children('span').removeClass('choosed');
+											$('#page').children('span').eq(selectPage-1).addClass('choosed');
+											
+											$('.medialist').html('');
+											//  判断是否是最后一页
+											if(selectPage == pageCount) {
+												for(i = (selectPage - 1) * pageSize; i < pageData; i++) {
+													var obj = {
+														items: jsArri[i]
+													};
+													console.log(obj);
+													var result = template('template', obj);
+
+													console.log(result);
+
+													$('.medialist').append(result);
+													
+												}
+
+											} else {
+												for(i = (selectPage - 1) * pageSize; i < pageSize * selectPage; i++) {
+													var obj = {
+														items: jsArri[i]
+													};
+													console.log(obj);
+													var result = template('template', obj);
+
+													console.log(result);
+
+													$('.medialist').append(result);
+													
+													
+												}
+
+											}
+											
+										
+										});
+
 									})
-                                    
-
-
-
-
-
 
 									//点击预览图显示弹窗
 
@@ -272,11 +295,7 @@
 												content: urlpc,
 
 											});
-//											layer.msg('点击任意处可关闭', function() {
-//													time: 500
-//												}
-												//Layer弹窗结束
-//											)
+							
 
 										} else {
 											//Layer弹窗开始
@@ -318,8 +337,8 @@
 						    <a href="http://liuxue.xdf.cn/xian/">更多》</a>
 					    </span>
 						<div class="link">
-							<a href="http://liuxue.xdf.cn/xian/mglh/xjslh/pmjx/1157967.shtml"><img src="./img/America.jpg" alt=""></a> 
-							<a href="http://liuxue.xdf.cn/blog/zhaoxinnan/"><img src="./img/xinnan.jpg" alt=""></a> 
+							<a href="http://liuxue.xdf.cn/xian/mglh/xjslh/pmjx/1157967.shtml"><img src="./img/America.jpg" alt=""></a>
+							<a href="http://liuxue.xdf.cn/blog/zhaoxinnan/"><img src="./img/xinnan.jpg" alt=""></a>
 						</div>
 					</div>
 					<div class="chanpin">
@@ -328,14 +347,25 @@
 						<a href="http://liuxue.xdf.cn/Product/">更多》</a>
 					</span>
 						<div class="link">
-							<a href="http://liuxue.xdf.cn/special/aus/growingup/"><img src="./img/yingling.jpg" alt=""></a> 
+							<a href="http://liuxue.xdf.cn/special/aus/growingup/"><img src="./img/yingling.jpg" alt=""></a>
 							<a href="http://liuxue.xdf.cn/special/usa/postgraduate_bjts/"><img src="./img/beijing.jpg" alt=""></a>
-							
+
 						</div>
 					</div>
 
 				</div>
 			</div>
+			
+			<div class="toTop">
+				<img src="img/toTop.png" alt="" />
+			</div>
+			<!--右侧乐语弹窗start-->
+			<div class="leyuu" >
+    			<a onclick="openWin()">
+            		<img src="./img/kefu.png" alt="">
+    			</a>
+			</div>
+			
 		</div>
 
 		<script src="js/index.js"></script>
