@@ -8,4 +8,20 @@ $(".toTop").click(function() {
 function openWin()
     {
         window.open('http://chat.looyuoms.com/chat/chat/p.do?c=20002134&f=10071643&g=10068659&site=15890&refer=biaoji&loc=biaoji','','height=500, width=800,top=200, left=300,  toolbar =no, menubar=no, scrollbars=no, resizable=no, location=no, status=no') 
-    } ;  
+    } ;
+    
+    
+ $('.wechat').mouseenter(function(){
+ 		$('.qrwechat').show()
+ });
+  $('.weibo').mouseenter(function(){
+ 		$('.qrweibo').show()
+ })
+ $('.wechat').mouseleave(function(){
+ 		$('.qrwechat').hide()
+ });
+ $('.weibo').mouseleave(function(){
+ 		$('.qrweibo').hide()
+ })
+
+    

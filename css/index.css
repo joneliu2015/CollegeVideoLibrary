@@ -97,6 +97,7 @@ span {
 @media screen and (min-width:54.785714rem) {
     .neirong{
         padding-top: 3.142857rem;
+        padding-bottom: 5rem;
         }
     .reload{
     	cursor: pointer;
@@ -226,14 +227,78 @@ color:#C8C8C8;
     	display: block;
     	position: fixed;
     	top: 50%;
-    	right: 8rem;
+    	right: 6rem;
     }
     .leyuu{
     	display: block;
     	position: fixed;
     	top: 30%;
-    	right: 6rem;
+    	right: 3rem;
     }
+    footer{
+    	/*height: 17.857143rem;*/
+    
+    	background: url(../img/footer_bg.jpg) repeat  center;
+    	background-size: 100% 100%;  
+  		-moz-background-size: 100% 100%;  
+  		-webkit-background-size: 100% 100%;  
+    	background-size:cover
+    }
+    .pccss{
+    	display: block;
+    	margin-top: 4.571429rem;
+    }
+    .mobicss{
+    	display: none;
+    }
+    .lis{
+    	padding:0 4.285714rem ;
+    }
+    .weibo{
+    	margin-left: 2.571429rem;
+    }
+    .qr{
+    	position: relative;
+    }
+    .qrwechat{
+    	position: absolute;
+    	top:-8rem;
+    	left:-2rem;
+   
+    }
+    .qrweibo{
+    	position: absolute;
+    	top:-8rem;
+    	left:6rem;
+  
+    }
+   .pccss p{
+   	 color:#ccc;
+   	 font-size: 0.5rem;
+   }
+   .pccss .bot_title{
+   	font-size: 1.5rem;
+   	line-height: 1.5rem;
+   	padding-top: 2rem;
+   }
+   .pccss a{
+   	color:#ccc
+   } 
+   .pccss .logo{
+   	margin-bottom: 2rem;
+   	width: 100%;
+   }
+   .toTop:hover{
+   	background-color: #FB4665;
+   }
+   .playreload{
+   	position: relative;
+   }
+   .play{
+   	position: absolute;
+   	bottom:10px;
+   	right:10px;
+   }
 }
 /*视频栏目列表移动端*/
 @media screen and (max-width:54.714286rem) {
@@ -285,7 +350,7 @@ color:#C8C8C8;
     .pageName{
     	width: 2rem;
     	height: 2rem;
-    	margin: 1rem 1rem;
+    	margin: 1rem 0.5rem;
     	text-align: center;
     	background-color: #FFFFFF;
     	line-height: 2rem;
@@ -308,10 +373,35 @@ color:#C8C8C8;
     .toTop{
     	display: none;
     }  
+    footer{
+    	
+    }
+    .pccss{
+    	display: none;
+    }
+    .mobicss{
+    	display: block;
+    	
+    }
+    .mobicss>img{
+    	width:16rem;
+    	height: auto;
+    }
+    .copyright{
+    	font:normal 0.5rem "微软雅黑" ;
+    	margin: 1rem 0 2rem 0;
+    	color: #3C3C3C;
+    }
+    .medialist{
+    	height: 45rem;
+    }
 }
 .link a:nth-child(2){
 	margin-top:18px;
 	display: block;
 }
 
-
+.qrwechat,
+.qrweibo{
+	display: none;
+}
