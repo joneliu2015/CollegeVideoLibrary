@@ -13,7 +13,6 @@ window.onload = function() {
 			//点击国家按钮显示指定内容
 			$("body").on("click", ".country>li", function(e) {
 				$(this).addClass('active').siblings().removeClass('active');
-				// alert("被电击了")
 				//获取当前tab中鼠标停在的table栏的索引  
 				var index = $(this).index();
 				//根据这个索引切换，下面的展示  
