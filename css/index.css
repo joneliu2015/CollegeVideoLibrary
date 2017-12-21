@@ -21,76 +21,15 @@ header {
 	margin-top: auto;
 }
 
-
-a:visited,a:active,a:link {
-text-decoration: none;
-}
-
-@media screen and (min-width:54.785714rem) {
-	ul {
-		margin: 0;
-		padding: 2rem 0 2rem 0;
-		display: block;
-		text-align: center;
-	}
-	li {
-		list-style: none;
-		/*float: left;*/
-		font: bold 17px "MicrosoftYahei";
-		line-height: 3rem;
-		margin: 1rem 0 1rem 0;
-		text-align: center;
-		color: #222222;
-		transition: 0.3s;
-		cursor: pointer;
-		-moz-user-select: none;
-		-o-user-select: none;
-		-khtml-user-select: none;
-		-webkit-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		display: inline;
-		border-radius: 2px;
-		padding: 6px 18px;
-		margin-left: 24px;
-	}
-	li:hover {
-	color: #fff;
-	background-color: rgb(180, 199, 241);
-    }
-    .time{
-    	float: right;
-    }
-}
-
-@media screen and (max-width:54.714286rem) {
-	ul {
-		margin: 0;
-		padding: 1rem 0 1rem 0;
-		display: block;
-
-	}
-	li {
-		list-style: none;
-		font: bold 1.428571rem "MicrosoftYahei";
-		line-height: 3rem;
-		margin: 1rem 1rem 1rem 1rem;
-		padding: 4px 8px;
-		text-align: center;
-		color: #222222;
-		transition: 0.3s;
-		display: inline;
-		border-radius: 2px;
-	}
+a:visited,
+a:active,
+a:link {
+	text-decoration: none;
 }
 
 .active {
 	background-color: #4A74E2;
 	color: #fff;
-}
-
-.selected {
-	/*display: block;*/
 }
 
 .line {
@@ -101,13 +40,7 @@ text-decoration: none;
 	background-color: #F9F9F9;
 }
 
-@media screen and (max-width:54.785714rem) {
-	.neirong>.left>.title,
-	.advert {display: none}
-}
-
 .advert {
-	/*width: 18.571429rem;*/
 	float: right;
 }
 
@@ -115,34 +48,16 @@ span {
 	display: inline-block
 }
 
-@media screen and (min-width:54.785714rem) {
-	.neirong {
-		padding-top: 3.142857rem;
-		padding-bottom: 5rem;
-	}
-	.reload {
-		cursor: pointer;
-	}
-	
-	.title1 a{
-		
-		color:#aaaaaa;
-	}
-	.title1 a:hover{
-		color:#4974E2 ;
-	}
-}
-
-@media screen and (max-width:54.714286rem) {}
-
 .advert>.zixun>.title1,
 .advert>.chanpin>.title1 {
 	margin-bottom: 2.142857rem;
 	color: #7f868d;
 }
-.titless{
+
+.titless {
 	color: #7f868d;
 }
+
 .chanpin {
 	margin-top: 70px;
 }
@@ -175,8 +90,7 @@ span {
 }
 
 .top>.title {
-	font:bold 16px "microsoftYahei";
-
+	font: bold 16px "microsoftYahei";
 	cursor: pointer;
 }
 
@@ -230,9 +144,56 @@ span {
 }
 
 
-/*视频栏目列表PC端*/
+/*PC端*/
 
 @media screen and (min-width:54.785714rem) {
+	ul {
+		margin: 0;
+		padding: 2rem 0 2rem 0;
+		display: block;
+		text-align: center;
+	}
+	li {
+		list-style: none;
+		/*float: left;*/
+		font: bold 17px "MicrosoftYahei";
+		line-height: 3rem;
+		margin: 1rem 0 1rem 0;
+		text-align: center;
+		color: #222222;
+		transition: 0.3s;
+		cursor: pointer;
+		-moz-user-select: none;
+		-o-user-select: none;
+		-khtml-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		display: inline;
+		border-radius: 2px;
+		padding: 6px 18px;
+		margin-left: 24px;
+	}
+	li:hover {
+		color: #fff;
+		background-color: rgb(180, 199, 241);
+	}
+	.time {
+		float: right;
+	}
+	.neirong {
+		padding-top: 3.142857rem;
+		padding-bottom: 5rem;
+	}
+	.reload {
+		cursor: pointer;
+	}
+	.title1 a {
+		color: #aaaaaa;
+	}
+	.title1 a:hover {
+		color: #4974E2;
+	}
 	.pageName {
 		width: 3rem;
 		height: 3rem;
@@ -252,12 +213,9 @@ span {
 		border: 1px solid #0F0F0F
 	}
 	.no-content {
-
-	
-		margin:24% 30% 0%  36%; 
+		margin: 24% 30% 0% 36%;
 		display: block;
 	}
-	
 	.toTop {
 		display: block;
 		position: fixed;
@@ -327,23 +285,19 @@ span {
 		margin-bottom: 2rem;
 		width: 100%;
 	}
-	
-	
-	
 	.playreload {
 		position: relative;
 	}
-	.mengban{
+	.mengban {
 		position: absolute;
 		top: 0px;
-		left:0px;
+		left: 0px;
 		width: 200px;
 		height: 150px;
 		background-color: #000000;
 		opacity: 0.6;
 		z-index: 2;
 	}
-	
 	.play {
 		position: absolute;
 		bottom: 10px;
@@ -351,15 +305,36 @@ span {
 		z-index: 9999;
 	}
 	.pubdate,
-	.glyphicon-time{
+	.glyphicon-time {
 		color: #aaaaaa;
 	}
 }
 
 
-/*视频栏目列表移动端*/
+/*移动端*/
 
 @media screen and (max-width:54.714286rem) {
+	.neirong>.left>.title,
+	.advert {
+		display: none
+	}
+	ul {
+		margin: 0;
+		padding: 1rem 0 1rem 0;
+		display: block;
+	}
+	li {
+		list-style: none;
+		font: bold 1.428571rem "MicrosoftYahei";
+		line-height: 3rem;
+		margin: 1rem 1rem 1rem 1rem;
+		padding: 4px 8px;
+		text-align: center;
+		color: #222222;
+		transition: 0.3s;
+		display: inline;
+		border-radius: 2px;
+	}
 	.titless,
 	.bot,
 	.classify {
@@ -372,7 +347,7 @@ span {
 	.item {
 		width: 100%;
 		margin-top: 1rem;
-		padding-bottom: 1rem;
+		padding-bottom:0.5rem;
 	}
 	.reload {
 		width: 30%;
@@ -418,7 +393,6 @@ span {
 		color: #FFFFFF;
 	}
 	.no-content {
-	
 		margin: 0 auto;
 		display: block;
 	}
@@ -444,13 +418,12 @@ span {
 	}
 	.medialist {
 		height: 45rem;
-		
 	}
 	.play {
 		display: none;
 	}
-	.left{
-	width: 100%;
+	.left {
+		width: 100%;
 	}
 }
 
