@@ -21,52 +21,67 @@ header {
 	margin-top: auto;
 }
 
-ul {
-	margin: 0;
-	padding: 1rem 0 1rem 0;
-}
 
-li {
-	list-style: none;
-	float: left;
-	text-align: center;
-	font: bold 1.428571rem "MicrosoftYahei";
-	line-height: 2rem;
-	color: #4A74E2;
-	transition: 1s;
-	cursor: pointer;
-	-moz-user-select: none;
-	-o-user-select: none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+a:visited,a:active,a:link {
+text-decoration: none;
 }
 
 @media screen and (min-width:54.785714rem) {
+	ul {
+		margin: 0;
+		padding: 2rem 0 2rem 0;
+		display: block;
+		text-align: center;
+	}
 	li {
+		list-style: none;
+		/*float: left;*/
 		font: bold 1.714286rem "MicrosoftYahei";
 		line-height: 3rem;
 		margin: 1rem 0 1rem 0;
+		text-align: center;
+		color: #222222;
+		transition: 0.3s;
+		cursor: pointer;
+		-moz-user-select: none;
+		-o-user-select: none;
+		-khtml-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		display: inline;
+		border-radius: 2px;
+		padding: 6px 18px;
+		margin-left: 24px;
 	}
+	li:hover {
+	color: #fff;
+	background-color: rgb(180, 199, 241);
+    }
+    .time{
+    	float: right;
+    }
 }
 
 @media screen and (max-width:54.714286rem) {
-	li {
-		font: bold 1.428571rem "MicrosoftYahei";
-		line-height: 2rem;
-		margin: 0.5rem 0 1rem 0;
+	ul {
+		margin: 0;
+		padding: 1rem 0 1rem 0;
+		display: block;
+
 	}
-}
-
-.country li {
-	display: block;
-	border-radius: 1.428571rem;
-}
-
-li:hover {
-	color: #fff;
-	background-color: rgb(180, 199, 241)
+	li {
+		list-style: none;
+		font: bold 1.428571rem "MicrosoftYahei";
+		line-height: 3rem;
+		margin: 1rem 1rem 1rem 1rem;
+		padding: 4px 8px;
+		text-align: center;
+		color: #222222;
+		transition: 0.3s;
+		display: inline;
+		border-radius: 2px;
+	}
 }
 
 .active {
@@ -75,11 +90,11 @@ li:hover {
 }
 
 .selected {
-	display: block;
+	/*display: block;*/
 }
 
 .line {
-	border-bottom: .071429rem solid #E5E5E5;
+	border-bottom: .071429rem solid #e0e7eb;
 }
 
 .content {
@@ -88,14 +103,11 @@ li:hover {
 
 @media screen and (max-width:54.785714rem) {
 	.neirong>.left>.title,
-	.advert {
-		display: none;
-	}
-	;
+	.advert {display: none}
 }
 
 .advert {
-	width: 18.571429rem;
+	/*width: 18.571429rem;*/
 	float: right;
 }
 
@@ -111,6 +123,13 @@ span {
 	.reload {
 		cursor: pointer;
 	}
+	.title1 a{
+		
+		color:#aaaaaa;
+	}
+	.title1 a:hover{
+		color:#4974E2 ;
+	}
 }
 
 @media screen and (max-width:54.714286rem) {}
@@ -118,6 +137,7 @@ span {
 .advert>.zixun>.title1,
 .advert>.chanpin>.title1 {
 	margin-bottom: 2.142857rem;
+	color: #7f868d;
 }
 
 .chanpin {
@@ -132,7 +152,7 @@ span {
 .item {
 	margin-top: 2.142857rem;
 	padding-bottom: 2.142857rem;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #e0e7eb;
 }
 
 .info {
@@ -163,17 +183,19 @@ span {
 }
 
 .intro {
-	color: #9EA7A8;
-	line-height: 2.5rem;
+	margin-top: 10px;
+	color: #7f868d;
+	line-height: 1.8rem;
 	font-size: 14px;
 }
 
 .jia {
-	width: 2rem;
-	height: 2rem;
+	width: 1.5rem;
+	height: 1.5rem;
 	border-radius: 50%;
 	text-align: center;
-	line-height: 2rem;
+	line-height: 1.5rem;
+	font-size: 1rem;
 	color: #fff;
 	background-color: #F18B8B;
 }
@@ -183,12 +205,13 @@ span {
 }
 
 .zhi {
-	width: 2rem;
-	height: 2rem;
+	width: 1.5rem;
+	height: 1.5rem;
 	border-radius: 50%;
 	text-align: center;
-	line-height: 2rem;
+	line-height: 1.5rem;
 	color: #fff;
+	font-size: 1rem;
 	background-color: #9AABB8;
 }
 
@@ -215,6 +238,7 @@ span {
 		line-height: 3rem;
 		border: 1px solid #8C8C8C;
 		border-radius: 50%;
+		font-weight: bold;
 	}
 	#page {
 		text-align: center
@@ -224,10 +248,12 @@ span {
 		border: 1px solid #0F0F0F
 	}
 	.no-content {
-		width: 40rem;
-		margin-top: 10rem;
-		margin-left: 10rem;
+
+	
+		margin:24% 30% 0%  30%; 
+		display: block;
 	}
+	
 	.toTop {
 		display: block;
 		position: fixed;
@@ -251,6 +277,7 @@ span {
 	.pccss {
 		display: block;
 		margin-top: 4.571429rem;
+		color: #d3d3d3;
 	}
 	.mobicss {
 		display: none;
@@ -287,6 +314,7 @@ span {
 		font-size: 1.5rem;
 		line-height: 1.5rem;
 		padding-top: 2rem;
+		opacity: 0.6;
 	}
 	.pccss a {
 		color: #ccc
@@ -302,6 +330,10 @@ span {
 		position: absolute;
 		bottom: 10px;
 		right: 10px;
+	}
+	.pubdate,
+	.glyphicon-time{
+		color: #aaaaaa;
 	}
 }
 
@@ -367,7 +399,9 @@ span {
 		color: #FFFFFF;
 	}
 	.no-content {
-		width: 28rem;
+	
+		margin: 0 auto;
+		display: block;
 	}
 	.leyuu,
 	.toTop {
@@ -391,9 +425,13 @@ span {
 	}
 	.medialist {
 		height: 45rem;
+		
 	}
-	.play{
+	.play {
 		display: none;
+	}
+	.left{
+	width: 100%;
 	}
 }
 

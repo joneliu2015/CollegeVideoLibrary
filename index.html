@@ -34,14 +34,14 @@
         <!--顶部bannerEnd-->
         <!--导航栏start-->
 		<nav class="container">
-			<ul class="row country">
-				<li class="col-xs-4 col-md-3 active selected" id="Americia">美国</li>
-				<li class="col-xs-4 col-md-3" id="England">英国</li>
-				<li class="col-xs-4 col-md-3" id="Canada">加拿大</li>
-				<li class="col-xs-4 col-md-3" id="Austrilia">澳大利亚</li>
-				<li class="col-xs-4 col-md-3" id="NewZealand">新西兰</li>
-				<li class="col-xs-4 col-md-3" id="Europe">欧洲</li>
-				<li class="col-xs-4 col-md-3" id="Asia">亚洲</li>
+			<ul class="country">
+				<li class="active selected" id="Americia">美国</li>
+				<li class="" id="England">英国</li>
+				<li class="" id="Canada">加拿大</li>
+				<li class="" id="Austrilia">澳大利亚</li>
+				<li class="" id="NewZealand">新西兰</li>
+				<li class="" id="Europe">欧洲</li>
+				<li class="" id="Asia">亚洲</li>
 			</ul>
 		</nav>
 		<!--导航栏End-->
@@ -71,9 +71,12 @@
 						<div class="info pull-left">
 							<div class='top'>
 								<span class="classify"><%=items.classify%></span>
-								<span class="title"><%=items.title%></span>
-								<span class="pubdate "><%=items.pubdate%></span>
-								<span class="glyphicon glyphicon-time "></span>
+								<span class="title">&nbsp;<%=items.title%></span>
+								<span class="time">
+									<span class="glyphicon glyphicon-time "></span>
+									<span class="pubdate "><%=items.pubdate%></span>
+								</span>
+								
 							</div>
 							<p class='intro text-overflow'>
 								<%=items.intro%>
@@ -81,6 +84,9 @@
 							<div class="bot">
 								<span class="jia">嘉</span>
 								<span class="name"><%=items.name%></span>
+								<span>
+									&nbsp;
+								</span>
 								<span class="zhi">职</span>
 								<span class="position"><%=items.position%></span>
 								<span class="click-rite"></span>
@@ -94,7 +100,7 @@
 					<div class="zixun">
 						<span class="title1">热门资讯</span>
 						<span class="title1 fr">
-						    <a href="http://liuxue.xdf.cn/xian/">更多》</a>
+						    <a href="http://liuxue.xdf.cn/xian/">更多&gt;&gt;</a>
 					    </span>
 						<div class="link">
 							<a href="http://liuxue.xdf.cn/xian/mglh/xjslh/pmjx/1157967.shtml"><img src="./img/America.jpg" alt=""></a>
@@ -104,7 +110,7 @@
 					<div class="chanpin">
 						<span class="title1">热门产品</span>
 						<span class="title1 fr">
-						<a href="http://liuxue.xdf.cn/Product/">更多》</a>
+						<a href="http://liuxue.xdf.cn/Product/">更多&gt;&gt;</a>
 					</span>
 						<div class="link">
 							<a href="http://liuxue.xdf.cn/special/aus/growingup/"><img src="./img/yingling.jpg" alt=""></a>
@@ -157,7 +163,7 @@
 							<img class="qrweibo" src="img/qr_weibo.png" alt="" />
 						</div>
 						<div class="con">
-							<p class="bot_title">陕西新东方前途出国</p>
+							<p class="bot_title" style="opacity: 1;">陕西新东方前途出国</p>
 							<p class="tel">电话：029-87203365</p>
 							<p class="adress">地址：西安市高新区林凯国际10层（科技路与高新二路十字东南角）</p>
 							<p class="copyright1">Copyright © 2017-2018 陕西新东方前途出国</p>
