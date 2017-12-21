@@ -36,7 +36,7 @@ text-decoration: none;
 	li {
 		list-style: none;
 		/*float: left;*/
-		font: bold 1.714286rem "MicrosoftYahei";
+		font: bold 17px "MicrosoftYahei";
 		line-height: 3rem;
 		margin: 1rem 0 1rem 0;
 		text-align: center;
@@ -139,7 +139,9 @@ span {
 	margin-bottom: 2.142857rem;
 	color: #7f868d;
 }
-
+.titless{
+	color: #7f868d;
+}
 .chanpin {
 	margin-top: 70px;
 }
@@ -172,7 +174,8 @@ span {
 }
 
 .top>.title {
-	font: bold 1.714286rem "microsoftYahei";
+	font:bold 16px "microsoftYahei";
+
 	cursor: pointer;
 }
 
@@ -250,7 +253,7 @@ span {
 	.no-content {
 
 	
-		margin:24% 30% 0%  30%; 
+		margin:24% 30% 0%  36%; 
 		display: block;
 	}
 	
