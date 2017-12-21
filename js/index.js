@@ -103,7 +103,7 @@ window.onload = function() {
 					});
 				})
 				//点击预览图显示弹窗
-				$(".reloadimg,.title").on("click", function() {
+				$(".reload,.title").on("click", function() {
 					//取得当前点击的预览图的下标
 					var indexB = $(this).parent().parent().parent().index();
 					//将预览图的下标作为当前显示的国家数据的中的urlpc值
