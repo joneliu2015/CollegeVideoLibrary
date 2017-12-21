@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
 		<meta charset="UTF-8">
 		<meta name="renderer" content="webkit">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<meta name="renderer" content="webkit">
-		<!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
+		<meta name="keywords" content="院校视频采访, 采访视频,视频库,留学生,院校视频库,留学生采访,海归采访,留学感想,留学感受,留学干货"/>
+		<meta name="description" content="陕西新东方前途出国院校视频库，提供专业的留学生采访视频资料和留学指导老师分享以及海外院校名师采访"/>
+		<meta name="copyright" content="本网站版权归陕西新东方前途出国咨询有限公司所有"/>
+		<meta name="revisit-after" content="1 days" >	
 		<title>前途院校库-全球院校采访精彩回顾</title>
 		<!-- Bootstrap -->
 		<link href="lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
@@ -22,16 +24,15 @@
 		<script src="js/jquery1.11.3.js"></script>
 		<script src="lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 		<script src="lib/layer/layer.js"></script>
-
 	</head>
-
 	<body>
+		<!--顶部bannerStart-->
 		<header class="container-fluid ">
-
 			<img class="top_pc  img-responsive center-block hidden-xs row" src="./img/top.jpg" alt="">
 			<img class="top_mobi  img-responsive center-block visible-xs-block row" src="./img/top_mobi.jpg" alt="">
 		</header>
-
+        <!--顶部bannerEnd-->
+        <!--导航栏start-->
 		<nav class="container">
 			<ul class="row country">
 				<li class="col-xs-4 col-md-3 active selected" id="Americia">美国</li>
@@ -43,51 +44,23 @@
 				<li class="col-xs-4 col-md-3" id="Asia">亚洲</li>
 			</ul>
 		</nav>
+		<!--导航栏End-->
 		<div class="line"></div>
+		<!--视频列表页面Start-->
 		<div class=" content ">
 			<div class="container neirong">
-
 				<div class="left fl">
 					<div class="titless ">
 						热门视频
 					</div>
 					<div class="medialist " id="medialist">
-
-						<!--<div class="yitiao clearfix">
-								<div class="reload pull-left">
-									<img src="img/reload1.jpg" alt="" />
-								</div>
-								<div class="info pull-left">
-									<div class='top'>
-										<span class="classify">家庭教育</span>
-										<span class="title">父母该如何做好家庭教育</span>
-										<span class="pubdate pull-right"></span>
-										<span class="glyphicon glyphicon-time pull-right"></span>
-										
-									</div>
-									<p class='intro text-overflow'>
-											好的教育，应该是父母通过孩子这把镜子，不断发现自我、修正自我、挖掘自我，并用新我来为孩子做示范和表率。我们是在教育孩子的过程中，遇见了更好的自己
-									</p>
-									<div class="bot">
-										<span class="jia">嘉</span>
-										<span class="name">刘亚春</span>
-										<span class="zhi">职</span>
-										<span class="position">新东方前途出国留学家庭预备营负责人</span>
-										<span class="glyphicon glyphicon-eye-open"></span>
-										<span class="click-rite">888</span>
-									</div>
-								</div>
-							</div>
-						-->
-
+						<!--此次内容由模板引擎写入-->
 					</div>
-					<div id="page" ></div>
+					<div id="page"></div>
 				</div>
-    			
-				<!--模板引擎-->
 
+				<!--模板引擎start-->
 				<script id="template" type="text/html">
-
 					<div class="item clearfix">
 						<div class="reload pull-left">
 							<div class="playreload">
@@ -113,224 +86,10 @@
 								<span class="click-rite"></span>
 							</div>
 						</div>
-
 					</div>
-
 				</script>
-
-				<!--模板引擎-->
-
-				<script type="text/javascript">
-					window.onload = function() {
-						var data;
-						$.ajax({
-							dataType: 'json',
-							url: 'data.json',
-							data: data,
-							type: 'get',
-							success: function(data, key) {
-								console.log(data);
-								//转化为js对象
-								var jsArr = data;
-
-								//包装为js对象
-								console.log(jsArr)
-
-								//遍历JSON对象，将JSON对象转化为数组
-								for(var key in jsArr) {
-									console.log(jsArr[key])
-								};
-
-								//点击国家按钮显示指定内容
-								$("body").on("click", ".country>li", function(e) {
-
-									$(this).addClass('active').siblings().removeClass('active');
-
-									// alert("被电击了")
-
-									//获取当前tab中鼠标停在的table栏的索引  
-									var index = $(this).index();
-									console.log(index);
-									//根据这个索引切换，下面的展示  
-									$("li").eq(index).addClass("selected").siblings().removeClass("selected");
-
-									//获取当前点击项目的ID
-									var indexId = $(this).attr('id');
-									console.log(indexId);
-
-									//新建数组，将当前点击项的id赋值给当前要显示的数组作为KEY值，就获取的当前显示项的数据
-									console.log(jsArr[this.id])
-
-									var jsArri = jsArr[this.id];
-									
-									if(jsArri=== undefined || jsArri.length == 0){
-										$('.medialist').html('<img class="no-content" style="" src="img/no_content.png" alt="" />');
-//										$('.left').removeClass('fl');
-										$('#page').hide();
-//										alert("木有啦！！！")
-									}else{
-										$('#page').show();
-									}
-									//新建对象
-									//									var obj = {
-									//										items: jsArri
-									//									};
-									//									console.log(obj)
-									//
-									//									
-									//									
-									//										//调用模板引擎方法，填充数据
-									//									var result = template('template', obj);
-									//									$('.medialist').html(result);
-									//
-									//									console.log(jsArri);
-
-									// 分页
-									$('#page').html("");
-									var pageData = jsArri.length;
-									console.log(pageData)
-									$(function() {
-										var count = pageData; //设置总条数
-										console.log(count)
-										var pageSize = 5; //每页显示的条数
-										var pageCount = Math.ceil(count / pageSize); //能显示几页
-										console.log(pageCount)
-										var currentPage = 1; //默认显示第一页
-										//做个分页按钮
-										for(var i = 1; i <= pageCount; i++) {
-											var pageN = '<span class="pageName"  selectPage="' + i + '">' + i + '</span>'
-											$('#page').append(pageN);
-										}
-
-										//默认显示第一页
-										$('.medialist').html('');
-										for(i = (currentPage - 1) * pageSize; i < pageSize * currentPage; i++) {
-											console.log(i);
-											console.log(jsArri[i]);
-											var obj = {
-												items: jsArri[i]
-											};
-											console.log(obj);
-
-											var result = template('template', obj);
-										
-
-											console.log(result);
-
-											$('.medialist').append(result);
-											$('#page span:first-child').addClass('choosed')
-										};
-
-										//显示选择页的内容  
-
-										$('.pageName').click(function() {
-											console.log("SSSS")
-											var selectPage = $(this).attr('selectPage');
-											console.log(selectPage);
-											$('#page').children('span').removeClass('choosed');
-											$('#page').children('span').eq(selectPage-1).addClass('choosed');
-											
-											$('.medialist').html('');
-											//  判断是否是最后一页
-											if(selectPage == pageCount) {
-												for(i = (selectPage - 1) * pageSize; i < pageData; i++) {
-													var obj = {
-														items: jsArri[i]
-													};
-													console.log(obj);
-													var result = template('template', obj);
-
-													console.log(result);
-
-													$('.medialist').append(result);
-													
-												}
-
-											} else {
-												for(i = (selectPage - 1) * pageSize; i < pageSize * selectPage; i++) {
-													var obj = {
-														items: jsArri[i]
-													};
-													console.log(obj);
-													var result = template('template', obj);
-
-													console.log(result);
-
-													$('.medialist').append(result);
-													
-													
-												}
-
-											}
-											
-										
-										});
-
-									})
-
-									//点击预览图显示弹窗
-
-									$(".reloadimg,.title").on("click", function() {
-
-										//取得当前点击的预览图的下标
-
-										var indexB = $(this).parent().parent().parent().index();
-
-										//										alert(indexB);
-
-										//将预览图的下标作为当前显示的国家数据的中的urlpc值
-
-										var urlpc = jsArri[indexB].urlpc;
-										var title = jsArri[indexB].title
-
-										console.log(urlpc);
-										if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)) {
-											//Layer弹窗开始
-											layer.open({
-												type: 2,
-												title: title,
-												area: ['320px', '240px'],
-												shade: 0.6,
-												closeBtn: 0,
-												shadeClose: true,
-												content: urlpc,
-
-											});
-							
-
-										} else {
-											//Layer弹窗开始
-											layer.open({
-												type: 2,
-												title: title,
-												area: ['640px', '360px'],
-												shade: 0.6,
-												closeBtn: 0,
-												shadeClose: true,
-												content: urlpc,
-
-											});
-											layer.msg('点击任意处可关闭', function() {
-												time: 500
-											})
-											//Layer弹窗结束
-										}
-
-										//										
-
-									});
-
-								});
-
-								//加载第一项美国
-								$("#Americia").trigger("click");
-
-							}
-						})
-
-					}
-				</script>
-
+				<!--模板引擎end-->
+                <!--右侧广告栏Start-->
 				<aside class="right fr advert">
 					<div class="zixun">
 						<span class="title1">热门资讯</span>
@@ -353,21 +112,22 @@
 
 						</div>
 					</div>
-
 				</aside>
+				<!--右侧广告栏End-->
 			</div>
-			
+            <!--返回顶部-->
 			<div class="toTop">
 				<img src="img/toTop.png" alt="" />
 			</div>
 			<!--右侧乐语弹窗start-->
-			<div class="leyuu" >
-    			<a onclick="openWin()">
-            		<img src="./img/kefu.png" alt="">
-    			</a>
+			<div class="leyuu">
+				<a onclick="openWin()">
+					<img src="./img/kefu.png" alt="">
+				</a>
 			</div>
-			
 		</div>
+		<!--视频列表End-->
+		<!--底部footerStart-->
 		<footer>
 			<div class="container">
 				<div class="pccss  row">
@@ -386,15 +146,15 @@
 						<div class="tuiguang">
 							<p class="bot_title">推广平台</p>
 							<span><a href="http://v.qq.com/vplus/08f47dc35a83e34bcfd603be13eae39a">腾讯视频</a></span>
+							<span><a href="https://weibo.com/xianqiantu?refer_flag=1001030101_">新浪微博</a></span>
 						</div>
 					</div>
 					<div class="col-md-4 lis">
 						<div class="qr">
 							<span class="wechat"><img src='img/wechat.png'/></span>
-							
 							<span class="weibo"><img src="img/weibo.png" /></span>
-							<img class="qrwechat"  src="img/qr_wechat.png" alt=""  />
-							<img class="qrweibo" src="img/qr_weibo.png" alt=""  />
+							<img class="qrwechat" src="img/qr_wechat.png" alt="" />
+							<img class="qrweibo" src="img/qr_weibo.png" alt="" />
 						</div>
 						<div class="con">
 							<p class="bot_title">陕西新东方前途出国</p>
@@ -402,13 +162,8 @@
 							<p class="adress">地址：西安市高新区林凯国际10层（科技路与高新二路十字东南角）</p>
 							<p class="copyright1">Copyright © 2017-2018 陕西新东方前途出国</p>
 						</div>
-						
 					</div>
-					
-					
 					<script type="text/javascript">
-						   
-
 					</script>
 				</div>
 				<div class="mobicss">
@@ -418,6 +173,7 @@
 				</div>
 			</div>
 		</footer>
+		<!--底部footerEnd-->
 		<script src="js/index.js"></script>
 	</body>
 
