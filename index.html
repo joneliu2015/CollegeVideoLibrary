@@ -1,225 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="renderer" content="webkit">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="renderer" content="webkit">
-	<meta name="keywords" content="院校视频采访, 采访视频,视频库,留学生,院校视频库,留学生采访,海归采访,留学感想,留学感受,留学干货" />
-	<meta name="description" content="陕西新东方前途出国院校视频库，提供专业的留学生采访视频资料和留学指导老师分享以及海外院校名师采访" />
-	<meta name="copyright" content="本网站版权归陕西新东方前途出国咨询有限公司所有" />
-	<meta name="revisit-after" content="1 days">
-	<title>前途院校库-全球院校采访精彩回顾</title>
-	<!-- Bootstrap -->
-	<!--<link href="lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">-->
-	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	    crossorigin="anonymous">
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="renderer" content="webkit">
+		<meta name="keywords" content="院校视频采访, 采访视频,视频库,留学生,院校视频库,留学生采访,海归采访,留学感想,留学感受,留学干货" />
+		<meta name="description" content="陕西新东方前途出国院校视频库，提供专业的留学生采访视频资料和留学指导老师分享以及海外院校名师采访" />
+		<meta name="copyright" content="本网站版权归陕西新东方前途出国咨询有限公司所有" />
+		<meta name="revisit-after" content="1 days">
+		<title>前途院校库-全球院校采访精彩回顾</title>
+		<!-- Bootstrap -->
+		<!--<link href="lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">-->
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
     		<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     		<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     	<![endif]-->
-	<link rel="stylesheet" href="css/index.css">
-	<script src="lib/template-web.js"></script>
-	<script src="js/jquery1.11.3.js"></script>
-	<!--<script src="lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>-->
-	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-	    crossorigin="anonymous"></script>
-	<script src="lib/layer/layer.js"></script>
-</head>
+		<link rel="stylesheet" href="css/index.css">
 
-<body>
-	<!--顶部bannerStart-->
-	<header class="container-fluid ">
-		<img class="top_pc  img-responsive center-block hidden-xs " src="./img/top.jpg" alt="">
-		<img class="top_mobi  img-responsive center-block visible-xs-block " src="./img/top_mobi.jpg" alt="">
-	</header>
-	<!--顶部bannerEnd-->
-	<!--导航栏start-->
-	<nav class="container">
-		<ul class="country">
-			<li class="active selected" id="Americia">美国</li>
-			<li id="England">英国</li>
-			<li id="Canada">加拿大</li>
-			<li id="Austrilia">澳大利亚</li>
-			<li id="NewZealand">新西兰</li>
-			<li id="Europe">欧洲</li>
-			<li id="Asia">亚洲</li>
-		</ul>
-	</nav>
-	<!--导航栏End-->
-	<div class="line"></div>
-	<!--视频列表页面Start-->
-	<div class=" content ">
-		<div class="container neirong">
-			<div class="left fl">
-				<div class="titless ">
-					热门视频
-				</div>
-				<div class="medialist " id="medialist">
-					<!--此次内容由模板引擎写入-->
-				</div>
-				<div id="page"></div>
-			</div>
+	</head>
 
-			<!--模板引擎start-->
-			<script id="template" type="text/html">
-				<div class="item clearfix">
-					<div class="reload pull-left">
-						<div class="playreload">
-							<img class="reloadimg" src="<%=items.imgsrc%>" alt="" />
-							<div class="mengban"></div>
-							<img class="play" src="img/play.png" alt="" />
-						</div>
+	<body>
+		<!--顶部bannerStart-->
+		<header class="container-fluid ">
+			<img class="top_pc  img-responsive center-block hidden-xs " src="./img/top.jpg" alt="">
+			<img class="top_mobi  img-responsive center-block visible-xs-block " src="./img/top_mobi.jpg" alt="">
+		</header>
+		<!--顶部bannerEnd-->
+		<!--导航栏start-->
+		<nav class="container">
+			<ul class="country">
+				<li class="active selected" id="Americia">美国</li>
+				<li id="England">英国</li>
+				<li id="Canada">加拿大</li>
+				<li id="Austrilia">澳大利亚</li>
+				<li id="NewZealand">新西兰</li>
+				<li id="Europe">欧洲</li>
+				<li id="Asia">亚洲</li>
+			</ul>
+		</nav>
+		<!--导航栏End-->
+		<div class="line"></div>
+		<!--视频列表页面Start-->
+		<div class=" content ">
+			<div class="container neirong">
+				<div class="left fl">
+					<div class="titless ">
+						热门视频
 					</div>
-					<div class="info pull-left">
-						<div class='top'>
-							<span class="classify">
+					<div class="medialist " id="medialist">
+						<!--此次内容由模板引擎写入-->
+					</div>
+					<div id="page"></div>
+				</div>
+
+				<!--模板引擎start-->
+				<script id="template" type="text/html">
+					<div class="item clearfix">
+						<div class="reload pull-left">
+							<div class="playreload">
+								<img class="reloadimg" src="<%=items.imgsrc%>" alt="" />
+								<div class="mengban"></div>
+								<img class="play" src="img/play.png" alt="" />
+							</div>
+						</div>
+						<div class="info pull-left">
+							<div class='top'>
+								<span class="classify">
 								<%=items.classify%>
 							</span>
-							<span class="title">&nbsp;
+								<span class="title">&nbsp;
 								<%=items.title%>
 							</span>
-							<span class="time">
+								<span class="time">
 								<span class="glyphicon glyphicon-time "></span>
 								<span class="pubdate ">
 									<%=items.pubdate%>
 								</span>
-							</span>
+								</span>
 
-						</div>
-						<p class='intro text-overflow'>
-							<%=items.intro%>
-						</p>
-						<div class="bot">
-							<span class="jia">嘉</span>
-							<span class="name">
+							</div>
+							<p class='intro text-overflow'>
+								<%=items.intro%>
+							</p>
+							<div class="bot">
+								<span class="jia">嘉</span>
+								<span class="name">
 								<%=items.name%>
 							</span>
-							<span>
+								<span>
 								&nbsp;
 							</span>
-							<span class="zhi">职</span>
-							<span class="position">
+								<span class="zhi">职</span>
+								<span class="position">
 								<%=items.position%>
 							</span>
-							<span class="click-rite"></span>
+								<span class="click-rite"></span>
+							</div>
 						</div>
 					</div>
-				</div>
-			</script>
-			<!--模板引擎end-->
-			<!--右侧广告栏Start-->
-			<aside class="right fr advert">
-				<div class="zixun">
-					<span class="title1">热门资讯</span>
-					<span class="title1 fr">
+				</script>
+				<!--模板引擎end-->
+				<!--右侧广告栏Start-->
+				<aside class="right fr advert">
+					<div class="zixun">
+						<span class="title1">热门资讯</span>
+						<span class="title1 fr">
 						<a target="_blank" href="http://liuxue.xdf.cn/xian/">更多&gt;&gt;</a>
 					</span>
-					<div class="link">
-						<a target="_blank" href="http://liuxue.xdf.cn/xian/mglh/xjslh/pmjx/1157967.shtml">
-							<img src="./img/America.jpg" alt="">
-						</a>
-						<a target="_blank" href="http://liuxue.xdf.cn/blog/zhaoxinnan/">
-							<img src="./img/xinnan.jpg" alt="">
-						</a>
+						<div class="link">
+							<a target="_blank" href="http://liuxue.xdf.cn/xian/mglh/xjslh/pmjx/1157967.shtml">
+								<img src="./img/America.jpg" alt="">
+							</a>
+							<a target="_blank" href="http://liuxue.xdf.cn/blog/zhaoxinnan/">
+								<img src="./img/xinnan.jpg" alt="">
+							</a>
+						</div>
 					</div>
-				</div>
-				<div class="chanpin">
-					<span class="title1">热门产品</span>
-					<span class="title1 fr">
+					<div class="chanpin">
+						<span class="title1">热门产品</span>
+						<span class="title1 fr">
 						<a target="_blank" href="http://liuxue.xdf.cn/Product/">更多&gt;&gt;</a>
 					</span>
-					<div class="link">
-						<a target="_blank" href="http://liuxue.xdf.cn/special/aus/growingup/">
-							<img src="./img/yingling.jpg" alt="">
-						</a>
-						<a target="_blank" href="http://liuxue.xdf.cn/special/usa/postgraduate_bjts/">
-							<img src="./img/beijing.jpg" alt="">
-						</a>
+						<div class="link">
+							<a target="_blank" href="http://liuxue.xdf.cn/special/aus/growingup/">
+								<img src="./img/yingling.jpg" alt="">
+							</a>
+							<a target="_blank" href="http://liuxue.xdf.cn/special/usa/postgraduate_bjts/">
+								<img src="./img/beijing.jpg" alt="">
+							</a>
 
+						</div>
 					</div>
-				</div>
-			</aside>
-			<!--右侧广告栏End-->
+				</aside>
+				<!--右侧广告栏End-->
+			</div>
+			<!--返回顶部-->
+			<div class="toTop">
+				<img src="img/toTop.png" alt="" />
+			</div>
+			<!--右侧乐语弹窗start-->
+			<div class="leyuu">
+				<a onclick="openWin()">
+					<img src="./img/kefu.png" alt="">
+				</a>
+			</div>
 		</div>
-		<!--返回顶部-->
-		<div class="toTop">
-			<img src="img/toTop.png" alt="" />
-		</div>
-		<!--右侧乐语弹窗start-->
-		<div class="leyuu">
-			<a onclick="openWin()">
-				<img src="./img/kefu.png" alt="">
-			</a>
-		</div>
-	</div>
-	<!--视频列表End-->
-	<!--底部footerStart-->
-	<footer>
-		<div class="container">
-			<div class="pccss  row">
-				<div class="col-md-4 lis">
-					<img class="logo" src="img/logo.png" alt="" />
-					<p>新东方前途出国咨询有限公司是新东方旗下唯一从事出国留学服务的专职机构。</p>
-					<p>新东方前途出国咨询有限公司立志于提供最专业的国际教育服务，帮助每一位梦想出国的学生实现自己的梦想，打造成专业、权威、诚信的留学服务旗舰品牌。</p>
-				</div>
-				<div class="col-md-4 lis ">
-					<div class="links">
-						<p class="bot_title" style="padding-top: 0;">友情链接</p>
-						<span>
+		<!--视频列表End-->
+		<!--底部footerStart-->
+		<footer>
+			<div class="container">
+				<div class="pccss  row">
+					<div class="col-md-4 lis">
+						<img class="logo" src="img/logo.png" alt="" />
+						<p>新东方前途出国咨询有限公司是新东方旗下唯一从事出国留学服务的专职机构。</p>
+						<p>新东方前途出国咨询有限公司立志于提供最专业的国际教育服务，帮助每一位梦想出国的学生实现自己的梦想，打造成专业、权威、诚信的留学服务旗舰品牌。</p>
+					</div>
+					<div class="col-md-4 lis ">
+						<div class="links">
+							<p class="bot_title" style="padding-top: 0;">友情链接</p>
+							<span>
 							<a href="http://www.xdf.cn">新东方官方网站</a>
 						</span>
-						<span>
+							<span>
 							<a href="http://www.koolearn.com">新东方在线</a>
 						</span>
-						<span>
+							<span>
 							<a href="http://liuxue.xdf.cn/xian">新东方前途出国</a>
 						</span>
-					</div>
-					<div class="tuiguang">
-						<p class="bot_title">推广平台</p>
-						<span>
+						</div>
+						<div class="tuiguang">
+							<p class="bot_title">推广平台</p>
+							<span>
 							<a href="http://v.qq.com/vplus/08f47dc35a83e34bcfd603be13eae39a">腾讯视频</a>
 						</span>
-						<span>
+							<span>
 							<a href="https://weibo.com/xianqiantu?refer_flag=1001030101_">新浪微博</a>
 						</span>
+						</div>
 					</div>
-				</div>
-				<div class="col-md-4 lis">
-					<div class="qr">
-						<span class="wechat">
+					<div class="col-md-4 lis">
+						<div class="qr">
+							<span class="wechat">
 							<img src='img/wechat.png' />
 						</span>
-						<span class="weibo">
+							<span class="weibo">
 							<img src="img/weibo.png" />
 						</span>
-						<img class="qrwechat" src="img/qr_wechat.png" alt="" />
-						<img class="qrweibo" src="img/qr_weibo.png" alt="" />
+							<img class="qrwechat" src="img/qr_wechat.png" alt="" />
+							<img class="qrweibo" src="img/qr_weibo.png" alt="" />
+						</div>
+						<div class="con">
+							<p class="bot_title" style="opacity: 1;">陕西新东方前途出国</p>
+							<p class="tel">电话：029-87203365</p>
+							<p class="adress">地址：西安市高新区林凯国际10层（科技路与高新二路十字东南角）</p>
+							<p class="copyright1">Copyright © 2017-2018 陕西新东方前途出国</p>
+						</div>
 					</div>
-					<div class="con">
-						<p class="bot_title" style="opacity: 1;">陕西新东方前途出国</p>
-						<p class="tel">电话：029-87203365</p>
-						<p class="adress">地址：西安市高新区林凯国际10层（科技路与高新二路十字东南角）</p>
-						<p class="copyright1">Copyright © 2017-2018 陕西新东方前途出国</p>
-					</div>
+					<script type="text/javascript">
+					</script>
 				</div>
-				<script type="text/javascript">
-				</script>
+				<div class="mobicss">
+					<img class="center-block" src="img/logo_colorful.png" alt="" />
+					<div class="hr"></div>
+					<div class="copyright text-center">Copyright © 2017-2018 陕西新东方前途出国</div>
+				</div>
 			</div>
-			<div class="mobicss">
-				<img class="center-block" src="img/logo_colorful.png" alt="" />
-				<div class="hr"></div>
-				<div class="copyright text-center">Copyright © 2017-2018 陕西新东方前途出国</div>
-			</div>
-		</div>
-	</footer>
-	<!--底部footerEnd-->
-	<script src="js/index.js"></script>
-</body>
+		</footer>
+		<!--底部footerEnd-->
+		<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js/index.js"></script>
+		<script src="lib/template-web.js"></script>
+		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="lib/layer/layer.js"></script>
+
+	</body>
 
 </html>
