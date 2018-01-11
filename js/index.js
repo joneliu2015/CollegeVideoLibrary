@@ -85,6 +85,7 @@ window.onload = function() {
 					//将预览图的下标作为当前显示的国家数据的中的urlpc值
 					var urlpc = jsArri[indexB].urlpc;
 					var title = jsArri[indexB].title;
+					console.log(urlpc);
 					if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)) {
 						//Layer弹窗开始
 						layer.open({
