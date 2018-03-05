@@ -26,10 +26,11 @@ window.onload = function () {
 					$('#page').hide();
 				} else {
 					$('#page').show();
-				}
+					var pageData = jsArri.length;
+				
 				// 分页
 				$('#page').html("");
-				var pageData = jsArri.length;
+				
 				$(function () {
 					var count = pageData; //设置总条数
 					var pageSize = 5; //每页显示的条数
@@ -42,14 +43,29 @@ window.onload = function () {
 					}
 					//默认显示第一页
 					$('.medialist').html('');
-					for (i = (currentPage - 1) * pageSize; i < pageSize * currentPage; i++) {
-						var obj = {
-							items: jsArri[i]
+					if(count<pageSize){
+						console.log("信息数量不够5条")
+						for (i = (currentPage - 1) * pageSize; i < count; i++) {
+							var obj = {
+								items: jsArri[i]
+							};
+							var result = template('template', obj);
+							$('.medialist').append(result);
+							$('#page span:first-child').addClass('choosed')
 						};
-						var result = template('template', obj);
-						$('.medialist').append(result);
-						$('#page span:first-child').addClass('choosed')
-					};
+					}else{
+						for (i = (currentPage - 1) * pageSize; i < pageSize * currentPage; i++) {
+							var obj = {
+								items: jsArri[i]
+							};
+							var result = template('template', obj);
+							$('.medialist').append(result);
+							$('#page span:first-child').addClass('choosed')
+						};
+					}
+
+
+					
 					//显示选择页的内容  
 					$('.pageName').click(function () {
 						var selectPage = $(this).attr('selectPage');
@@ -77,7 +93,9 @@ window.onload = function () {
 							}
 						}
 					});
-				})
+				}
+			
+			)
 				//点击预览图显示弹窗
 				$(".mengban,.title").on("click", function () {
 					//取得当前点击的预览图的下标
@@ -105,7 +123,7 @@ window.onload = function () {
 						layer.open({
 							type: 2,
 							title: title,
-							area: ['640px', '360px'],
+							area: ['1280px', '720px'],
 							shade: 0.6,
 							closeBtn: 0,
 							shadeClose: true,
@@ -117,7 +135,7 @@ window.onload = function () {
 						//Layer弹窗结束
 					}
 				});
-			});
+			}});
 			//加载第一项美国
 			$("#Americia").trigger("click");
 		}
