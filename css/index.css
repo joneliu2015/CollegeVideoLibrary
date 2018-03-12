@@ -436,3 +436,6 @@ span {
 .qrweibo {
 	display: none;
 }
+.opacity{
+	opacity: 0.1;
+}

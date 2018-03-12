@@ -27,6 +27,10 @@ window.onload = function () {
 					$('#page').hide();
 				} else {
 					$('#page').show();
+
+
+
+
 					var pageData = jsArri.length;
 					// 分页
 					$('#page').html("");
@@ -91,6 +95,20 @@ window.onload = function () {
 									}
 								}
 
+								// 蒙版隐藏
+							$('.playreload').mouseenter(function () {
+								console.log("显示");
+								$(this).children('.mengban').addClass("opacity");
+							
+							});
+							// 蒙版显示
+							$('.playreload').mouseleave(function () {
+								console.log("隐藏");
+								$(this).children('.mengban').removeClass("opacity");
+								
+							});
+
+
 								//点击预览图显示弹窗（已选择页码，非第一页）
 								$(".mengban,.title").on("click", function () {
 									//取得当前点击的预览图的下标,由于非第一页，所以要加上（页码-1）*每页的数量。
@@ -134,11 +152,30 @@ window.onload = function () {
 
 							});
 
+								// 蒙版隐藏
+								$('.playreload').mouseenter(function () {
+									console.log("显示");
+									$(this).children('.mengban').addClass("opacity");
+								
+								});
+								// 蒙版显示
+								$('.playreload').mouseleave(function () {
+									console.log("隐藏");
+									$(this).children('.mengban').removeClass("opacity");
+									
+								});
 
 
-						}
+						},
+
+
 
 					)
+
+
+
+
+
 					//点击预览图显示弹窗(未选择页码，第一页)
 					$(".mengban,.title").on("click", function () {
 						//取得当前点击的预览图的下标
@@ -179,16 +216,22 @@ window.onload = function () {
 							//Layer弹窗结束
 						}
 					});
+
 				}
 			});
 			//加载第一项美国
 			$("#Americia").trigger("click");
+
+
+
+
 		}
 	})
 	//乐语弹窗
 	function openWin() {
 		window.open('http://chat.looyuoms.com/chat/chat/p.do?c=20002134&f=10071643&g=10068659&site=15890&refer=biaoji&loc=biaoji', '', 'height=500, width=800,top=200, left=300,  toolbar =no, menubar=no, scrollbars=no, resizable=no, location=no, status=no')
 	};
+
 	//点击返回顶部
 	$(".toTop").click(function () {
 		$("html,body").animate({
