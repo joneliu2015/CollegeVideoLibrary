@@ -147,13 +147,13 @@ span {
 /*PC端*/
 
 @media screen and (min-width:54.785714rem) {
-	ul {
+	.country {
 		margin: 0;
 		padding: 2rem 0 2rem 0;
 		display: block;
 		text-align: center;
 	}
-	li {
+	.country>li {
 		list-style: none;
 		/*float: left;*/
 		font: bold 17px "MicrosoftYahei";
@@ -174,7 +174,7 @@ span {
 		padding: 6px 18px;
 		margin-left: 24px;
 	}
-	li:hover {
+	.country>li:hover {
 		color: #fff;
 		background-color: rgb(180, 199, 241);
 	}
@@ -242,7 +242,7 @@ span {
 		color: #d3d3d3;
 	}
 	.mobicss {
-		display: none;
+		display: none !important;
 	}
 	.lis {
 		padding: 0 4.285714rem;
@@ -308,6 +308,33 @@ span {
 	.glyphicon-time {
 		color: #aaaaaa;
 	}
+
+	/*左侧浮窗*/
+#reg{width:200px; height:400px; margin:0px; padding:0px; position:fixed; top:120px; left:5px; background:url(./special/reg_bg.png) no-repeat; z-index:1000;-webkit-backface-visibility: hidden;
+	-webkit-transform: translateZ(0);
+	backface-visibility:hidden;
+	transform: translateZ(0);}
+	#cBtn{width:8px; height:8px; margin:0px; padding:0px; position:absolute; top:75px; right:15px;}
+	#ul_form{width:200px;height:205px; list-style:none; margin:165px 0 0 0px; padding:0px; font-size:12px;}
+	#ul_form li{display:inline-block;line-height:18px; margin-bottom:16px; padding: 0 0 2px 20px;}
+	#ul_form li span{ color:#c00;}
+	#ul_form li:last-child{display:inline-block;line-height:18px; margin:0px; padding:0px;}
+	#ul_form li input{width:114px; line-height:18px; border: solid 1px #cccccc; margin-left:3px;}
+	#ul_form li select{width:90px; line-height:18px; border: solid 1px #cccccc; margin-left:3px;}
+	#ul_form li:last-child input{ border:none;}
+	#reg .close_btn {
+		background: rgba(0, 0, 0, 0) url("./special/close_btn.png") no-repeat scroll 0 0;
+		cursor: pointer;
+		height: 20px;
+		position: absolute;
+		right: 15px;
+		top: 80px;
+		width: 20px;
+	}
+	.mobile{
+		display:none;
+	}
+
 }
 
 
@@ -317,6 +344,9 @@ span {
 	.neirong>.left>.title,
 	.advert {
 		display: none
+	}
+	#reg{
+		display:none;
 	}
 	ul {
 		margin: 0;
@@ -439,3 +469,15 @@ span {
 .opacity{
 	opacity: 0.1;
 }
+
+
+	@media screen and (max-width: 1000px){
+		.duanxin, 
+		.adviceBtn,
+		.leyuMobile
+		 {
+			 float:left;
+			width: 50%;
+			text-align:center
+		}
+	}
